@@ -11,6 +11,7 @@ interface AnimatedPageHeaderProps {
   overlayColor?: string;
   textPosition?: 'left' | 'center' | 'right';
   children?: React.ReactNode;
+  id?: string;
 }
 
 const AnimatedPageHeader = ({
@@ -21,7 +22,8 @@ const AnimatedPageHeader = ({
   height = 'h-[60vh]',
   overlayColor = 'from-gray-900/90 to-gray-900/70',
   textPosition = 'center',
-  children
+  children,
+  id
 }: AnimatedPageHeaderProps) => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -77,7 +79,7 @@ const AnimatedPageHeader = ({
   };
 
   return (
-    <div className={`relative ${height} overflow-hidden`} ref={headerRef}>
+    <div id={id} className={`relative ${height} overflow-hidden`} ref={headerRef}>
       {/* Images de fond qui défilent */}
       {backgroundImages.map((img, index) => (
         <motion.div

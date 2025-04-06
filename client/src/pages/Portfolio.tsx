@@ -162,6 +162,9 @@ const PortfolioPage = () => {
     <div className="min-h-screen bg-gray-900">
       <Navbar />
       
+      {/* Spacer pour la barre de navigation */}
+      <div className="h-[70px]"></div>
+      
       {/* Hero Section */}
       <AnimatedPageHeader 
         id="portfolio-header"
