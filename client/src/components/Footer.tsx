@@ -9,10 +9,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <Logo size={40} />
-              <span className="text-xl font-bold">UDI</span>
+              <span className="text-xl font-bold">UDI-BUSINESS</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Unity of Digital Innovation - Transformons ensemble le futur digital.
+              Unity of Digital Innovation Business - Transformons ensemble le futur digital.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-[#0080FF] transition duration-300">
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">© {new Date().getFullYear()} Unity of Digital Innovation. Tous droits réservés.</p>
+          <p className="text-gray-400 mb-4 md:mb-0">© {new Date().getFullYear()} Unity of Digital Innovation Business. Tous droits réservés.</p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-[#0080FF] transition duration-300">Mentions légales</a>
             <a href="#" className="text-gray-400 hover:text-[#0080FF] transition duration-300">Confidentialité</a>
