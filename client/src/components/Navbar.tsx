@@ -116,7 +116,6 @@ const Navbar = () => {
             </div>
             
             <Link href="/portfolio" className="text-white hover:text-[#FFC000] transition duration-300">Portfolio</Link>
-            <a href="/#projects" className="text-white hover:text-[#FFC000] transition duration-300">Projets</a>
             <a href="/#about" className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
             <a 
               href="/#contact" 
@@ -182,7 +181,6 @@ const Navbar = () => {
             </div>
             
             <Link href="/portfolio" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Portfolio</Link>
-            <a href="/#projects" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Projets</a>
             <a href="/#about" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
             <a 
               href="/#contact" 

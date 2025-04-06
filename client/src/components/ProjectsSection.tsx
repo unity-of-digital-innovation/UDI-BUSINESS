@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { type Project } from '@shared/schema';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Link } from 'wouter';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,7 +117,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-24 bg-gray-800 relative">
       <div className="container mx-auto px-4 relative z-10">
         <div id="projects-heading" className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Nos <span className="text-gradient">Projets</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Notre <span className="text-gradient">Portfolio</span></h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Découvrez quelques-unes de nos réalisations les plus récentes
           </p>
@@ -191,12 +192,12 @@ const ProjectsSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a 
-            href="#" 
-            className="px-8 py-3 rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-medium hover:shadow-lg transition duration-300 transform hover:scale-105"
+          <Link 
+            to="/portfolio" 
+            className="px-8 py-3 rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-medium hover:shadow-lg transition duration-300 transform hover:scale-105 inline-block"
           >
-            Voir tous les projets
-          </a>
+            Voir tout le portfolio
+          </Link>
         </div>
       </div>
     </section>

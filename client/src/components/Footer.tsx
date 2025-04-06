@@ -52,7 +52,6 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Entreprise</h3>
             <ul className="space-y-4 text-gray-400">
               <li><a href="#about" className="hover:text-[#0080FF] transition duration-300">À propos</a></li>
-              <li><a href="#projects" className="hover:text-[#0080FF] transition duration-300">Projets</a></li>
               <li><Link href="/portfolio" className="hover:text-[#0080FF] transition duration-300">Portfolio</Link></li>
               <li><a href="#" className="hover:text-[#0080FF] transition duration-300">Carrières</a></li>
               <li><a href="#" className="hover:text-[#0080FF] transition duration-300">Blog</a></li>
