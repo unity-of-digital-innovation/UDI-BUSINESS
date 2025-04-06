@@ -123,7 +123,7 @@ const Navbar = () => {
             </div>
             
             <Link href="/portfolio" className="text-white hover:text-[#FFC000] transition duration-300">Portfolio</Link>
-            <a href="/#about" className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
+            <Link href="/equipe" className="text-white hover:text-[#FFC000] transition duration-300">Équipe</Link>
             <a 
               href="/#contact" 
               className="px-5 py-2 rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-medium hover:shadow-lg transition duration-300 transform hover:scale-105"
@@ -194,7 +194,7 @@ const Navbar = () => {
             </div>
             
             <Link href="/portfolio" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Portfolio</Link>
-            <a href="/#about" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
+            <Link href="/equipe" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Équipe</Link>
             <a 
               href="/#contact" 
               onClick={closeMobileMenu}

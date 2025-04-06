@@ -5,6 +5,7 @@ import Home from "@/pages/Home";
 import Admin from "@/pages/Admin";
 import Login from "@/pages/Login";
 import Portfolio from "@/pages/Portfolio";
+import Equipe from "@/pages/Equipe";
 import ServiceSoftwareDev from "@/pages/ServiceSoftwareDev";
 import ServiceAIBigData from "@/pages/ServiceAIBigData";
 import ServiceAutomation from "@/pages/ServiceAutomation";
@@ -37,6 +38,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/portfolio" component={Portfolio} />
+        <Route path="/equipe" component={Equipe} />
         
         {/* Routes directes pour les services */}
         <Route path="/ServiceSoftwareDev" component={ServiceSoftwareDev} />
