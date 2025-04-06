@@ -241,15 +241,69 @@ const WhatsAppAutomation = () => {
             </p>
           </div>
           
-          <div className="flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <AutomationPlatformsDemo initialPlatform="whatsapp" autoRotate={true} interval={4000} />
-            </motion.div>
+          <div className="relative p-4 md:p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700/30 shadow-xl mx-auto max-w-4xl">
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+              {/* Cercles décoratifs */}
+              <div className="absolute top-[-10%] left-[-5%] w-[30%] h-[30%] rounded-full bg-blue-500/5 blur-2xl"></div>
+              <div className="absolute top-[30%] right-[-15%] w-[40%] h-[40%] rounded-full bg-yellow-500/5 blur-2xl"></div>
+              <div className="absolute bottom-[-20%] left-[10%] w-[35%] h-[35%] rounded-full bg-blue-600/5 blur-3xl"></div>
+            </div>
+            
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-2">Multi-Plateforme</h3>
+              <p className="text-gray-400 max-w-xl mx-auto mb-4">
+                Notre solution d'automatisation fonctionne sur toutes vos plateformes de communication. Centralisez tous vos canaux et offrez une expérience client cohérente.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+              <div className="order-2 md:order-1">
+                <div className="space-y-4">
+                  <div className="bg-gray-800/80 p-4 rounded-lg border border-gray-700/50">
+                    <h4 className="flex items-center text-lg font-medium mb-2">
+                      <span className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center mr-3">
+                        <FontAwesomeIcon icon={faRobot} className="text-blue-400" />
+                      </span>
+                      Communication unifiée
+                    </h4>
+                    <p className="text-gray-400 pl-11">
+                      Gérez WhatsApp, Email, SMS, Messenger, Telegram et LinkedIn depuis une seule interface, avec des automatisations personnalisées pour chaque canal.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gray-800/80 p-4 rounded-lg border border-gray-700/50">
+                    <h4 className="flex items-center text-lg font-medium mb-2">
+                      <span className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center mr-3">
+                        <FontAwesomeIcon icon={faComment} className="text-yellow-400" />
+                      </span>
+                      Synchronisation en temps réel
+                    </h4>
+                    <p className="text-gray-400 pl-11">
+                      Les conversations sont synchronisées en temps réel entre toutes les plateformes, permettant une transition fluide d'un canal à l'autre.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="order-1 md:order-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="transform md:rotate-3 hover:rotate-0 transition-transform duration-500 shadow-xl"
+                >
+                  <AutomationPlatformsDemo 
+                    initialPlatform="whatsapp" 
+                    autoRotate={true} 
+                    interval={4000} 
+                    width="w-full max-w-sm mx-auto" 
+                    height="h-[450px]"
+                    className="shadow-2xl"
+                  />
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

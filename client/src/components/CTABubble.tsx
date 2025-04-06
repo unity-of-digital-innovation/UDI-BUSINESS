@@ -136,11 +136,9 @@ const CTABubble: React.FC<CTABubbleProps> = ({ interval = 15000 }) => {
               <h4 className="font-bold text-lg mb-2 text-[#FFC000]">{message.title}</h4>
               <p className="text-gray-300 text-sm mb-4">{message.content}</p>
               
-              <Link href={message.link}>
-                <a className="inline-flex items-center bg-[#FFC000] text-gray-900 font-medium text-sm px-4 py-2 rounded-full hover:bg-[#FFD000] transition-colors">
-                  {message.cta}
-                  <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                </a>
+              <Link href={message.link} className="inline-flex items-center bg-[#FFC000] text-gray-900 font-medium text-sm px-4 py-2 rounded-full hover:bg-[#FFD000] transition-colors">
+                {message.cta}
+                <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </Link>
             </div>
             
