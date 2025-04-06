@@ -44,13 +44,13 @@ const CTASection = () => {
             <div id="cta-buttons" className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <a 
                 href="#contact" 
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-semibold text-center shadow-lg shadow-[#0080FF]/20 hover:shadow-[#FFC000]/30 transition duration-300 transform hover:scale-105"
+                className="px-6 py-3 text-sm md:text-base rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-semibold text-center shadow-lg shadow-[#0080FF]/20 hover:shadow-[#FFC000]/30 transition duration-300 transform hover:scale-105"
               >
                 Contactez-nous
               </a>
               <a 
                 href="#services" 
-                className="px-8 py-4 rounded-full border-2 border-white/20 hover:border-[#FFC000]/50 text-white font-semibold text-center transition duration-300 hover:bg-white/5"
+                className="px-6 py-3 text-sm md:text-base rounded-full border border-white/20 hover:border-[#FFC000]/50 text-white font-semibold text-center transition duration-300 hover:bg-white/5"
               >
                 En savoir plus
               </a>

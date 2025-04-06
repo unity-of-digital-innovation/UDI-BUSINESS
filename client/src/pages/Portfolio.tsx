@@ -187,9 +187,9 @@ const PortfolioPage = () => {
               <button
                 key={category.id}
                 onClick={() => handleFilter(category.id)}
-                className={`px-5 py-3 rounded-full transition-all duration-300 flex items-center ${
+                className={`px-4 py-2 text-sm rounded-full transition-all duration-300 flex items-center ${
                   activeFilter === category.id
-                    ? 'bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-semibold shadow-lg'
+                    ? 'bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-semibold shadow-md'
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
               >
@@ -229,8 +229,8 @@ const PortfolioPage = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
                     <div className="absolute inset-0 bg-[#0080FF]/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button className="bg-white text-gray-900 font-bold py-2 px-4 rounded-full flex items-center">
-                        <FontAwesomeIcon icon={faEye} className="mr-2" />
+                      <button className="bg-white text-gray-900 text-sm font-semibold py-2 px-3 rounded-full flex items-center shadow-md">
+                        <FontAwesomeIcon icon={faEye} className="mr-1.5" />
                         Voir détails
                       </button>
                     </div>
@@ -331,9 +331,9 @@ const PortfolioPage = () => {
                     href={selectedProject.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-gradient-to-r from-[#0080FF] to-[#FFC000] px-6 py-3 rounded-full text-white font-semibold hover:shadow-lg transition transform hover:scale-105"
+                    className="inline-flex items-center bg-gradient-to-r from-[#0080FF] to-[#FFC000] px-5 py-2 text-sm rounded-full text-white font-semibold hover:shadow-lg transition transform hover:scale-105"
                   >
-                    <FontAwesomeIcon icon={faLink} className="mr-2" />
+                    <FontAwesomeIcon icon={faLink} className="mr-1.5" />
                     Visiter le projet
                   </a>
                 </div>
@@ -358,7 +358,7 @@ const PortfolioPage = () => {
             </p>
             <a 
               href="#contact" 
-              className="inline-flex items-center bg-gradient-to-r from-[#0080FF] to-[#FFC000] px-8 py-4 rounded-full text-white font-semibold hover:shadow-lg transition transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-[#0080FF] to-[#FFC000] px-6 py-3 text-sm md:text-base rounded-full text-white font-semibold hover:shadow-lg transition transform hover:scale-105"
             >
               Commencer un projet
             </a>
