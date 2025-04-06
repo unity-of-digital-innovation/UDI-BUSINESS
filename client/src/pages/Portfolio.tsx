@@ -225,11 +225,11 @@ const PortfolioPage = () => {
                   transition={{ duration: 0.3 }}
                   onClick={() => openProjectModal(project)}
                 >
-                  <div className="relative h-64">
+                  <div className="relative h-64 overflow-hidden">
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
                     <div className="absolute inset-0 bg-[#0080FF]/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -305,24 +305,29 @@ const PortfolioPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-gradient">Technologies utilisées</h3>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      'React', 'Node.js', 'TypeScript', 'Python', 'TensorFlow',
-                      'AWS', 'Docker', 'GraphQL', 'MongoDB'
-                    ].slice(0, 3 + Math.floor(Math.random() * 4)).map((tech, i) => (
-                      <span key={i} className="bg-gray-700 px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
+                    {selectedProject.technologies && selectedProject.technologies.length > 0 ? (
+                      selectedProject.technologies.map((tech, i) => (
+                        <span key={i} className="bg-gray-700 px-3 py-1 rounded-full text-sm">
+                          {tech}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="text-gray-400">Information non disponible</span>
+                    )}
                   </div>
                 </div>
                 
                 <div>
                   <h3 className="text-lg font-semibold mb-2 text-gradient">Résultats clés</h3>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300">
-                    <li>Amélioration de l'efficacité opérationnelle de 45%</li>
-                    <li>Réduction des coûts de maintenance de 30%</li>
-                    <li>Satisfaction client accrue de 95%</li>
-                  </ul>
+                  {selectedProject.keyResults && selectedProject.keyResults.length > 0 ? (
+                    <ul className="list-disc list-inside space-y-2 text-gray-300">
+                      {selectedProject.keyResults.map((result, i) => (
+                        <li key={i}>{result}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-gray-400">Information non disponible</p>
+                  )}
                 </div>
                 
                 <div className="pt-4 border-t border-gray-700 flex justify-end">

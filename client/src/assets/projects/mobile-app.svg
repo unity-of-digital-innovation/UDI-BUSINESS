@@ -1,0 +1,12 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1F2937"/>
+  <rect x="100" y="100" width="600" height="400" rx="20" fill="#0080FF" opacity="0.8"/>
+  
+  <!-- Mobile App Icon -->
+  <rect x="350" y="150" width="100" height="200" rx="10" stroke="white" stroke-width="8" fill="#FFC000"/>
+  <circle cx="400" cy="320" r="15" fill="white"/>
+  <rect x="375" y="170" width="50" height="100" rx="5" fill="white"/>
+  
+  <!-- Text for Mobile App -->
+  <text x="400" y="450" font-family="Arial" font-size="36" font-weight="bold" fill="white" text-anchor="middle">Application Mobile</text>
+</svg>

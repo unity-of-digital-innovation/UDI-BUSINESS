@@ -103,29 +103,75 @@ export class MemStorage implements IStorage {
       color: "yellow"
     });
     
-    // Add sample projects
+    // Add sample projects with new fields
     this.createProject({
-      title: "Plateforme E-commerce",
-      description: "Solution complète pour une marque de luxe avec intégration de paiement et gestion des stocks en temps réel.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80",
+      title: "Application E-commerce",
+      description: "Plateforme complète de commerce électronique avec passerelle de paiement et système de gestion des commandes. Notre solution permet une expérience d'achat fluide, une gestion des stocks en temps réel, et des intégrations avec différentes passerelles de paiement.",
+      image: "/src/assets/projects/ecommerce.svg",
       category: "Développement",
-      link: "#"
+      link: "#",
+      technologies: ["React", "Node.js", "MongoDB", "AWS"],
+      keyResults: [
+        "Augmentation des ventes en ligne de 45%",
+        "Réduction des coûts opérationnels de 30%",
+        "Expérience utilisateur améliorée avec un taux de conversion de 15%"
+      ]
     });
     
     this.createProject({
-      title: "Système de prédiction",
-      description: "Algorithme d'IA pour l'analyse prédictive des comportements clients dans le secteur bancaire.",
-      image: "https://images.unsplash.com/photo-1580982027768-1d4eeced3902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80",
+      title: "Système de BI et Analytics",
+      description: "Tableau de bord d'analyse de données et plateforme de business intelligence personnalisée. Notre solution intègre des algorithmes d'apprentissage automatique pour prédire les tendances et aider à la prise de décision.",
+      image: "/src/assets/projects/ai-analytics.svg",
       category: "Intelligence Artificielle",
-      link: "#"
+      link: "#",
+      technologies: ["Python", "TensorFlow", "R", "PowerBI", "AWS"],
+      keyResults: [
+        "Prévision des tendances avec une précision de 92%",
+        "Réduction du temps d'analyse de 70%",
+        "ROI de 300% sur les campagnes marketing basées sur les données"
+      ]
     });
     
     this.createProject({
       title: "Workflow automatisé",
-      description: "Solution d'automatisation des processus RH pour une entreprise internationale.",
-      image: "https://images.unsplash.com/photo-1563467753715-eee9265101c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80",
+      description: "Solution d'automatisation des processus RH pour une entreprise internationale. Ce système gère l'ensemble du cycle de vie des employés, de l'embauche à la sortie, en automatisant les tâches répétitives.",
+      image: "/src/assets/projects/automation.svg",
       category: "Automatisation",
-      link: "#"
+      link: "#",
+      technologies: ["Java", "Spring Boot", "Angular", "Docker", "Kubernetes"],
+      keyResults: [
+        "Temps de traitement des dossiers RH réduit de 85%",
+        "Économie annuelle de 120,000€",
+        "Satisfaction des employés améliorée de 40%"
+      ]
+    });
+
+    this.createProject({
+      title: "CRM Enterprise",
+      description: "Système complet de gestion de la relation client avec automatisation marketing et analyses avancées. Notre CRM permet de suivre l'intégralité du parcours client et d'optimiser les processus de vente.",
+      image: "/src/assets/projects/crm.svg",
+      category: "Conseil",
+      link: "#",
+      technologies: ["Salesforce", "JavaScript", "Apex", "AWS", "Tableau"],
+      keyResults: [
+        "Augmentation du taux de conversion de 35%",
+        "Pipeline de vente amélioré de 50%",
+        "Réduction du temps de cycle de vente de 28%"
+      ]
+    });
+
+    this.createProject({
+      title: "Application Mobile Santé",
+      description: "Application mobile de suivi de santé et de bien-être avec intégration IoT pour les appareils connectés. Cette solution permet aux utilisateurs de suivre leurs activités, leur alimentation et leurs constantes vitales.",
+      image: "/src/assets/projects/mobile-app.svg",
+      category: "Développement",
+      link: "#",
+      technologies: ["React Native", "Firebase", "Swift", "Kotlin", "IoT"],
+      keyResults: [
+        "Plus de 250,000 téléchargements",
+        "Engagement utilisateur quotidien à 72%",
+        "Note moyenne de 4.8/5 sur les app stores"
+      ]
     });
     
     // Add sample testimonials
@@ -167,7 +213,11 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
+    const user: User = { 
+      ...insertUser, 
+      id, 
+      isAdmin: insertUser.isAdmin ?? false 
+    };
     this.users.set(id, user);
     return user;
   }
@@ -221,7 +271,12 @@ export class MemStorage implements IStorage {
   
   async createProject(project: InsertProject): Promise<Project> {
     const id = this.currentProjectId++;
-    const newProject: Project = { ...project, id };
+    const newProject: Project = { 
+      ...project, 
+      id, 
+      technologies: project.technologies || [],
+      keyResults: project.keyResults || []
+    };
     this.projects.set(id, newProject);
     return newProject;
   }

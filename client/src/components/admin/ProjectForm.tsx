@@ -67,6 +67,8 @@ const ProjectForm = () => {
       image: '',
       category: '',
       link: '#',
+      technologies: [],
+      keyResults: [],
     },
   });
 
@@ -154,6 +156,8 @@ const ProjectForm = () => {
       image: project.image,
       category: project.category,
       link: project.link,
+      technologies: project.technologies || [],
+      keyResults: project.keyResults || [],
     });
   };
 
@@ -288,6 +292,132 @@ const ProjectForm = () => {
                   )}
                 />
               </div>
+              
+              <FormField
+                control={form.control}
+                name="technologies"
+                render={({ field }) => {
+                  const [techInput, setTechInput] = useState('');
+                  const handleAddTech = () => {
+                    if (techInput.trim() && !field.value?.includes(techInput.trim())) {
+                      const newTechnologies = [...(field.value || []), techInput.trim()];
+                      field.onChange(newTechnologies);
+                      setTechInput('');
+                    }
+                  };
+                  const handleRemoveTech = (index: number) => {
+                    const newTechnologies = [...(field.value || [])];
+                    newTechnologies.splice(index, 1);
+                    field.onChange(newTechnologies);
+                  };
+                  return (
+                    <FormItem>
+                      <FormLabel>Technologies utilisées</FormLabel>
+                      <div className="space-y-3">
+                        <div className="flex space-x-2">
+                          <Input 
+                            value={techInput}
+                            onChange={(e) => setTechInput(e.target.value)}
+                            placeholder="Ajouter une technologie..."
+                            className="bg-gray-800 border-gray-700 text-white flex-1"
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') {
+                                e.preventDefault();
+                                handleAddTech();
+                              }
+                            }}
+                          />
+                          <Button 
+                            type="button" 
+                            onClick={handleAddTech}
+                            className="bg-[#0080FF] hover:bg-[#0080FF]/80"
+                          >
+                            <FontAwesomeIcon icon={faPlus} />
+                          </Button>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {(field.value || []).map((tech, index) => (
+                            <div key={index} className="flex items-center bg-gray-700 rounded-full px-3 py-1">
+                              <span className="text-sm">{tech}</span>
+                              <button 
+                                type="button"
+                                className="ml-2 text-gray-400 hover:text-white"
+                                onClick={() => handleRemoveTech(index)}
+                              >
+                                ×
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  );
+                }}
+              />
+
+              <FormField
+                control={form.control}
+                name="keyResults"
+                render={({ field }) => {
+                  const [resultInput, setResultInput] = useState('');
+                  const handleAddResult = () => {
+                    if (resultInput.trim() && !field.value?.includes(resultInput.trim())) {
+                      const newResults = [...(field.value || []), resultInput.trim()];
+                      field.onChange(newResults);
+                      setResultInput('');
+                    }
+                  };
+                  const handleRemoveResult = (index: number) => {
+                    const newResults = [...(field.value || [])];
+                    newResults.splice(index, 1);
+                    field.onChange(newResults);
+                  };
+                  return (
+                    <FormItem>
+                      <FormLabel>Résultats clés</FormLabel>
+                      <div className="space-y-3">
+                        <div className="flex space-x-2">
+                          <Input 
+                            value={resultInput}
+                            onChange={(e) => setResultInput(e.target.value)}
+                            placeholder="Ex: Augmentation des ventes de 45%..."
+                            className="bg-gray-800 border-gray-700 text-white flex-1"
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter') {
+                                e.preventDefault();
+                                handleAddResult();
+                              }
+                            }}
+                          />
+                          <Button 
+                            type="button" 
+                            onClick={handleAddResult}
+                            className="bg-[#0080FF] hover:bg-[#0080FF]/80"
+                          >
+                            <FontAwesomeIcon icon={faPlus} />
+                          </Button>
+                        </div>
+                        <div className="space-y-2">
+                          {(field.value || []).map((result, index) => (
+                            <div key={index} className="flex items-center bg-gray-700 rounded-lg px-3 py-2">
+                              <span className="text-sm flex-1">{result}</span>
+                              <button 
+                                type="button"
+                                className="ml-2 text-gray-400 hover:text-white"
+                                onClick={() => handleRemoveResult(index)}
+                              >
+                                ×
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <FormMessage />
+                    </FormItem>
+                  );
+                }}
+              />
               
               <div className="flex justify-end space-x-2 pt-2">
                 {isEditing && (

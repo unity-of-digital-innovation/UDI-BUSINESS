@@ -1,0 +1,12 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1F2937"/>
+  <rect x="100" y="100" width="600" height="400" rx="20" fill="#0080FF" opacity="0.8"/>
+  
+  <!-- Automation Icon -->
+  <circle cx="400" cy="250" r="100" fill="#FFC000"/>
+  <path d="M350 250 L380 220 L420 220 L450 250 L420 280 L380 280 Z" stroke="white" stroke-width="8" fill="none"/>
+  <circle cx="400" cy="250" r="20" fill="white"/>
+  
+  <!-- Text for Automation -->
+  <text x="400" y="450" font-family="Arial" font-size="36" font-weight="bold" fill="white" text-anchor="middle">Automatisation Processus</text>
+</svg>
