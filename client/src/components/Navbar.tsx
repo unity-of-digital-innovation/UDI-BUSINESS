@@ -34,12 +34,13 @@ const Navbar = () => {
           </a>
           
           <div className="hidden md:flex space-x-8 items-center">
-            <a href="#home" className="text-white hover:text-[#FFC000] transition duration-300">Accueil</a>
-            <a href="#services" className="text-white hover:text-[#FFC000] transition duration-300">Services</a>
-            <a href="#projects" className="text-white hover:text-[#FFC000] transition duration-300">Projets</a>
-            <a href="#about" className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
+            <a href="/" className="text-white hover:text-[#FFC000] transition duration-300">Accueil</a>
+            <a href="/#services" className="text-white hover:text-[#FFC000] transition duration-300">Services</a>
+            <Link href="/portfolio" className="text-white hover:text-[#FFC000] transition duration-300">Portfolio</Link>
+            <a href="/#projects" className="text-white hover:text-[#FFC000] transition duration-300">Projets</a>
+            <a href="/#about" className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
             <a 
-              href="#contact" 
+              href="/#contact" 
               className="px-5 py-2 rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-medium hover:shadow-lg transition duration-300 transform hover:scale-105"
             >
               Contact
@@ -62,12 +63,13 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-gray-900 border-b border-gray-800">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="#home" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Accueil</a>
-            <a href="#services" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Services</a>
-            <a href="#projects" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Projets</a>
-            <a href="#about" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
+            <a href="/" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Accueil</a>
+            <a href="/#services" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Services</a>
+            <Link href="/portfolio" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Portfolio</Link>
+            <a href="/#projects" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">Projets</a>
+            <a href="/#about" onClick={closeMobileMenu} className="text-white hover:text-[#FFC000] transition duration-300">À propos</a>
             <a 
-              href="#contact" 
+              href="/#contact" 
               onClick={closeMobileMenu}
               className="px-5 py-2 rounded-full bg-gradient-to-r from-[#0080FF] to-[#FFC000] text-white font-medium text-center hover:shadow-lg transition duration-300"
             >

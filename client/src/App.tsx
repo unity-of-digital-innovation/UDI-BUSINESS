@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Home from "@/pages/Home";
 import Admin from "@/pages/Admin";
 import Login from "@/pages/Login";
+import Portfolio from "@/pages/Portfolio";
 import NotFound from "@/pages/not-found";
 import ProgressBar from "@/components/ProgressBar";
 import CustomCursor from "@/components/CustomCursor";
@@ -27,6 +28,7 @@ function App() {
       
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/portfolio" component={Portfolio} />
         <Route path="/admin">
           {authStatus?.authenticated && authStatus?.isAdmin ? <Admin /> : <Login />}
         </Route>
