@@ -9,6 +9,8 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faLink, faLaptopCode, faBrain, faCogs, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import AnimatedPageHeader from '@/components/AnimatedPageHeader';
+import { headerBackgrounds } from '@/assets/headers';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -161,24 +163,15 @@ const PortfolioPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section 
-        id="portfolio-header" 
-        className="py-24 md:py-32 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#0080FF]/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#FFC000]/20 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Notre <span className="text-gradient">Portfolio</span></h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Découvrez nos réalisations les plus récentes et comment nous avons aidé nos clients à atteindre leurs objectifs digitaux. Chaque projet raconte une histoire de transformation et d'innovation.
-            </p>
-          </div>
-        </div>
-      </section>
+      <AnimatedPageHeader 
+        id="portfolio-header"
+        title="Notre Portfolio"
+        subtitle="Découvrez nos réalisations les plus récentes et comment nous avons aidé nos clients à atteindre leurs objectifs digitaux. Chaque projet raconte une histoire de transformation et d'innovation."
+        backgroundImages={headerBackgrounds.portfolio}
+        highlightedWord="Portfolio"
+        textPosition="center"
+        height="md:h-[40vh] h-[50vh]"
+      />
       
       {/* Filters */}
       <section className="py-6">

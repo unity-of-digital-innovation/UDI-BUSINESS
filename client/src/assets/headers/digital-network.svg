@@ -1,0 +1,97 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1729" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="hex-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0080FF" />
+      <stop offset="100%" stop-color="#0080FF" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="hex-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC000" />
+      <stop offset="100%" stop-color="#FFC000" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)" />
+  
+  <!-- Digital network pattern -->
+  <g opacity="0.1">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="200" x2="1920" y2="200" stroke="#0080FF" stroke-width="1" />
+    <line x1="0" y1="400" x2="1920" y2="400" stroke="#0080FF" stroke-width="1" />
+    <line x1="0" y1="600" x2="1920" y2="600" stroke="#0080FF" stroke-width="1" />
+    <line x1="0" y1="800" x2="1920" y2="800" stroke="#0080FF" stroke-width="1" />
+    <line x1="0" y1="1000" x2="1920" y2="1000" stroke="#0080FF" stroke-width="1" />
+    
+    <!-- Vertical lines -->
+    <line x1="200" y1="0" x2="200" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="400" y1="0" x2="400" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="600" y1="0" x2="600" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="800" y1="0" x2="800" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="1000" y1="0" x2="1000" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="1200" y1="0" x2="1200" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="1400" y1="0" x2="1400" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="1600" y1="0" x2="1600" y2="1080" stroke="#FFC000" stroke-width="1" />
+    <line x1="1800" y1="0" x2="1800" y2="1080" stroke="#FFC000" stroke-width="1" />
+  </g>
+  
+  <!-- Hexagonal Pattern -->
+  <g opacity="0.15">
+    <!-- Row 1 -->
+    <polygon points="100,100 150,173 100,246 0,246 -50,173 0,100" fill="url(#hex-gradient)" />
+    <polygon points="300,100 350,173 300,246 200,246 150,173 200,100" fill="url(#hex-gradient-2)" />
+    <polygon points="500,100 550,173 500,246 400,246 350,173 400,100" fill="url(#hex-gradient)" />
+    <polygon points="700,100 750,173 700,246 600,246 550,173 600,100" fill="url(#hex-gradient-2)" />
+    <polygon points="900,100 950,173 900,246 800,246 750,173 800,100" fill="url(#hex-gradient)" />
+    <polygon points="1100,100 1150,173 1100,246 1000,246 950,173 1000,100" fill="url(#hex-gradient-2)" />
+    <polygon points="1300,100 1350,173 1300,246 1200,246 1150,173 1200,100" fill="url(#hex-gradient)" />
+    <polygon points="1500,100 1550,173 1500,246 1400,246 1350,173 1400,100" fill="url(#hex-gradient-2)" />
+    <polygon points="1700,100 1750,173 1700,246 1600,246 1550,173 1600,100" fill="url(#hex-gradient)" />
+    
+    <!-- Row 3 -->
+    <polygon points="100,300 150,373 100,446 0,446 -50,373 0,300" fill="url(#hex-gradient-2)" />
+    <polygon points="300,300 350,373 300,446 200,446 150,373 200,300" fill="url(#hex-gradient)" />
+    <polygon points="500,300 550,373 500,446 400,446 350,373 400,300" fill="url(#hex-gradient-2)" />
+    <polygon points="700,300 750,373 700,446 600,446 550,373 600,300" fill="url(#hex-gradient)" />
+    <polygon points="900,300 950,373 900,446 800,446 750,373 800,300" fill="url(#hex-gradient-2)" />
+    <polygon points="1100,300 1150,373 1100,446 1000,446 950,373 1000,300" fill="url(#hex-gradient)" />
+    <polygon points="1300,300 1350,373 1300,446 1200,446 1150,373 1200,300" fill="url(#hex-gradient-2)" />
+    <polygon points="1500,300 1550,373 1500,446 1400,446 1350,373 1400,300" fill="url(#hex-gradient)" />
+    <polygon points="1700,300 1750,373 1700,446 1600,446 1550,373 1600,300" fill="url(#hex-gradient-2)" />
+    
+    <!-- Row 5 -->
+    <polygon points="100,500 150,573 100,646 0,646 -50,573 0,500" fill="url(#hex-gradient)" />
+    <polygon points="300,500 350,573 300,646 200,646 150,573 200,500" fill="url(#hex-gradient-2)" />
+    <polygon points="500,500 550,573 500,646 400,646 350,573 400,500" fill="url(#hex-gradient)" />
+    <polygon points="700,500 750,573 700,646 600,646 550,573 600,500" fill="url(#hex-gradient-2)" />
+    <polygon points="900,500 950,573 900,646 800,646 750,573 800,500" fill="url(#hex-gradient)" />
+    <polygon points="1100,500 1150,573 1100,646 1000,646 950,573 1000,500" fill="url(#hex-gradient-2)" />
+    <polygon points="1300,500 1350,573 1300,646 1200,646 1150,573 1200,500" fill="url(#hex-gradient)" />
+    <polygon points="1500,500 1550,573 1500,646 1400,646 1350,573 1400,500" fill="url(#hex-gradient-2)" />
+    <polygon points="1700,500 1750,573 1700,646 1600,646 1550,573 1600,500" fill="url(#hex-gradient)" />
+  </g>
+  
+  <!-- Connection lines -->
+  <g opacity="0.2" stroke-width="2">
+    <line x1="150" y1="173" x2="350" y2="373" stroke="#0080FF" />
+    <line x1="350" y1="373" x2="550" y2="173" stroke="#FFC000" />
+    <line x1="550" y1="173" x2="750" y2="373" stroke="#0080FF" />
+    <line x1="750" y1="373" x2="950" y2="173" stroke="#FFC000" />
+    <line x1="950" y1="173" x2="1150" y2="373" stroke="#0080FF" />
+    <line x1="1150" y1="373" x2="1350" y2="173" stroke="#FFC000" />
+    <line x1="1350" y1="173" x2="1550" y2="373" stroke="#0080FF" />
+  </g>
+  
+  <!-- Glowing dots at connection points -->
+  <circle cx="150" cy="173" r="5" fill="#0080FF" opacity="0.8" />
+  <circle cx="350" cy="373" r="5" fill="#0080FF" opacity="0.8" />
+  <circle cx="550" cy="173" r="5" fill="#FFC000" opacity="0.8" />
+  <circle cx="750" cy="373" r="5" fill="#FFC000" opacity="0.8" />
+  <circle cx="950" cy="173" r="5" fill="#0080FF" opacity="0.8" />
+  <circle cx="1150" cy="373" r="5" fill="#0080FF" opacity="0.8" />
+  <circle cx="1350" cy="173" r="5" fill="#FFC000" opacity="0.8" />
+  <circle cx="1550" cy="373" r="5" fill="#FFC000" opacity="0.8" />
+</svg>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0080FF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0080FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFC000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#111827"/>
+  
+  <!-- Circuit pattern -->
+  <g opacity="0.15">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="100" x2="1920" y2="100" stroke="#0080FF" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1920" y2="300" stroke="#0080FF" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1920" y2="500" stroke="#0080FF" stroke-width="1"/>
+    <line x1="0" y1="700" x2="1920" y2="700" stroke="#0080FF" stroke-width="1"/>
+    <line x1="0" y1="900" x2="1920" y2="900" stroke="#0080FF" stroke-width="1"/>
+    
+    <!-- Vertical lines -->
+    <line x1="100" y1="0" x2="100" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="500" y1="0" x2="500" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="700" y1="0" x2="700" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="900" y1="0" x2="900" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="1100" y1="0" x2="1100" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="1300" y1="0" x2="1300" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="1500" y1="0" x2="1500" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="1700" y1="0" x2="1700" y2="1080" stroke="#FFC000" stroke-width="1"/>
+    <line x1="1900" y1="0" x2="1900" y2="1080" stroke="#FFC000" stroke-width="1"/>
+  </g>
+  
+  <!-- Circuit nodes and connections -->
+  <g opacity="0.3">
+    <!-- Nodes -->
+    <circle cx="100" cy="100" r="5" fill="#0080FF"/>
+    <circle cx="300" cy="300" r="5" fill="#FFC000"/>
+    <circle cx="500" cy="100" r="5" fill="#0080FF"/>
+    <circle cx="700" cy="300" r="5" fill="#FFC000"/>
+    <circle cx="900" cy="100" r="5" fill="#0080FF"/>
+    <circle cx="1100" cy="300" r="5" fill="#FFC000"/>
+    <circle cx="1300" cy="100" r="5" fill="#0080FF"/>
+    <circle cx="1500" cy="300" r="5" fill="#FFC000"/>
+    <circle cx="1700" cy="100" r="5" fill="#0080FF"/>
+    
+    <circle cx="100" cy="500" r="5" fill="#FFC000"/>
+    <circle cx="300" cy="700" r="5" fill="#0080FF"/>
+    <circle cx="500" cy="500" r="5" fill="#FFC000"/>
+    <circle cx="700" cy="700" r="5" fill="#0080FF"/>
+    <circle cx="900" cy="500" r="5" fill="#FFC000"/>
+    <circle cx="1100" cy="700" r="5" fill="#0080FF"/>
+    <circle cx="1300" cy="500" r="5" fill="#FFC000"/>
+    <circle cx="1500" cy="700" r="5" fill="#0080FF"/>
+    <circle cx="1700" cy="500" r="5" fill="#FFC000"/>
+    
+    <circle cx="100" cy="900" r="5" fill="#0080FF"/>
+    <circle cx="300" cy="900" r="5" fill="#FFC000"/>
+    <circle cx="500" cy="900" r="5" fill="#0080FF"/>
+    <circle cx="700" cy="900" r="5" fill="#FFC000"/>
+    <circle cx="900" cy="900" r="5" fill="#0080FF"/>
+    <circle cx="1100" cy="900" r="5" fill="#FFC000"/>
+    <circle cx="1300" cy="900" r="5" fill="#0080FF"/>
+    <circle cx="1500" cy="900" r="5" fill="#FFC000"/>
+    <circle cx="1700" cy="900" r="5" fill="#0080FF"/>
+    
+    <!-- Diagonal connections -->
+    <line x1="100" y1="100" x2="300" y2="300" stroke="#0080FF" stroke-width="2"/>
+    <line x1="300" y1="300" x2="500" y2="100" stroke="#FFC000" stroke-width="2"/>
+    <line x1="500" y1="100" x2="700" y2="300" stroke="#0080FF" stroke-width="2"/>
+    <line x1="700" y1="300" x2="900" y2="100" stroke="#FFC000" stroke-width="2"/>
+    <line x1="900" y1="100" x2="1100" y2="300" stroke="#0080FF" stroke-width="2"/>
+    <line x1="1100" y1="300" x2="1300" y2="100" stroke="#FFC000" stroke-width="2"/>
+    <line x1="1300" y1="100" x2="1500" y2="300" stroke="#0080FF" stroke-width="2"/>
+    <line x1="1500" y1="300" x2="1700" y2="100" stroke="#FFC000" stroke-width="2"/>
+    
+    <line x1="100" y1="500" x2="300" y2="700" stroke="#FFC000" stroke-width="2"/>
+    <line x1="300" y1="700" x2="500" y2="500" stroke="#0080FF" stroke-width="2"/>
+    <line x1="500" y1="500" x2="700" y2="700" stroke="#FFC000" stroke-width="2"/>
+    <line x1="700" y1="700" x2="900" y2="500" stroke="#0080FF" stroke-width="2"/>
+    <line x1="900" y1="500" x2="1100" y2="700" stroke="#FFC000" stroke-width="2"/>
+    <line x1="1100" y1="700" x2="1300" y2="500" stroke="#0080FF" stroke-width="2"/>
+    <line x1="1300" y1="500" x2="1500" y2="700" stroke="#FFC000" stroke-width="2"/>
+    <line x1="1500" y1="700" x2="1700" y2="500" stroke="#0080FF" stroke-width="2"/>
+    
+    <!-- Cross connections -->
+    <line x1="300" y1="300" x2="300" y2="700" stroke="#0080FF" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="700" y1="300" x2="700" y2="700" stroke="#FFC000" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="1100" y1="300" x2="1100" y2="700" stroke="#0080FF" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="1500" y1="300" x2="1500" y2="700" stroke="#FFC000" stroke-width="1" stroke-dasharray="5,5"/>
+    
+    <line x1="500" y1="100" x2="500" y2="500" stroke="#0080FF" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="900" y1="100" x2="900" y2="500" stroke="#FFC000" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="1300" y1="100" x2="1300" y2="500" stroke="#0080FF" stroke-width="1" stroke-dasharray="5,5"/>
+    <line x1="1700" y1="100" x2="1700" y2="500" stroke="#FFC000" stroke-width="1" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Tech icons/symbols -->
+  <g opacity="0.5">
+    <!-- CPU symbol -->
+    <rect x="400" y="400" width="80" height="80" stroke="#0080FF" stroke-width="2" fill="none"/>
+    <line x1="420" y1="400" x2="420" y2="380" stroke="#0080FF" stroke-width="1"/>
+    <line x1="440" y1="400" x2="440" y2="380" stroke="#0080FF" stroke-width="1"/>
+    <line x1="460" y1="400" x2="460" y2="380" stroke="#0080FF" stroke-width="1"/>
+    <line x1="420" y1="480" x2="420" y2="500" stroke="#0080FF" stroke-width="1"/>
+    <line x1="440" y1="480" x2="440" y2="500" stroke="#0080FF" stroke-width="1"/>
+    <line x1="460" y1="480" x2="460" y2="500" stroke="#0080FF" stroke-width="1"/>
+    <line x1="400" y1="420" x2="380" y2="420" stroke="#0080FF" stroke-width="1"/>
+    <line x1="400" y1="440" x2="380" y2="440" stroke="#0080FF" stroke-width="1"/>
+    <line x1="400" y1="460" x2="380" y2="460" stroke="#0080FF" stroke-width="1"/>
+    <line x1="480" y1="420" x2="500" y2="420" stroke="#0080FF" stroke-width="1"/>
+    <line x1="480" y1="440" x2="500" y2="440" stroke="#0080FF" stroke-width="1"/>
+    <line x1="480" y1="460" x2="500" y2="460" stroke="#0080FF" stroke-width="1"/>
+    
+    <!-- Data flow path -->
+    <path d="M600,300 Q700,250 800,300 T1000,300" stroke="#0080FF" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M1100,600 Q1200,550 1300,600 T1500,600" stroke="#FFC000" stroke-width="3" fill="none" opacity="0.6"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="200" cy="800" r="100" fill="url(#grad1)" opacity="0.3"/>
+  <circle cx="1700" cy="300" r="150" fill="url(#grad2)" opacity="0.3"/>
+</svg>

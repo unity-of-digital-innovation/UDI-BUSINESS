@@ -1,0 +1,65 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101827" />
+      <stop offset="100%" stop-color="#1E1E2E" />
+    </linearGradient>
+    <linearGradient id="circle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0080FF" />
+      <stop offset="100%" stop-color="#FFC000" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)" />
+  
+  <!-- Abstract wave pattern -->
+  <path d="M0,400 C400,300 600,500 1000,400 C1400,300 1600,500 1920,400 L1920,1080 L0,1080 Z" 
+        fill="#0080FF" opacity="0.05" />
+  <path d="M0,700 C400,600 600,800 1000,700 C1400,600 1600,800 1920,700 L1920,1080 L0,1080 Z" 
+        fill="#FFC000" opacity="0.05" />
+  
+  <!-- Dots pattern -->
+  <g fill="#FFC000" opacity="0.2">
+    <circle cx="100" cy="100" r="3" />
+    <circle cx="300" cy="200" r="3" />
+    <circle cx="500" cy="100" r="3" />
+    <circle cx="700" cy="200" r="3" />
+    <circle cx="900" cy="100" r="3" />
+    <circle cx="1100" cy="200" r="3" />
+    <circle cx="1300" cy="100" r="3" />
+    <circle cx="1500" cy="200" r="3" />
+    <circle cx="1700" cy="100" r="3" />
+    <circle cx="1900" cy="200" r="3" />
+    
+    <circle cx="100" cy="300" r="3" />
+    <circle cx="300" cy="400" r="3" />
+    <circle cx="500" cy="300" r="3" />
+    <circle cx="700" cy="400" r="3" />
+    <circle cx="900" cy="300" r="3" />
+    <circle cx="1100" cy="400" r="3" />
+    <circle cx="1300" cy="300" r="3" />
+    <circle cx="1500" cy="400" r="3" />
+    <circle cx="1700" cy="300" r="3" />
+    <circle cx="1900" cy="400" r="3" />
+    
+    <circle cx="100" cy="500" r="3" />
+    <circle cx="300" cy="600" r="3" />
+    <circle cx="500" cy="500" r="3" />
+    <circle cx="700" cy="600" r="3" />
+    <circle cx="900" cy="500" r="3" />
+    <circle cx="1100" cy="600" r="3" />
+    <circle cx="1300" cy="500" r="3" />
+    <circle cx="1500" cy="600" r="3" />
+    <circle cx="1700" cy="500" r="3" />
+    <circle cx="1900" cy="600" r="3" />
+  </g>
+  
+  <!-- Large gradient circles -->
+  <circle cx="100" cy="900" r="300" fill="url(#circle-gradient)" opacity="0.05" />
+  <circle cx="1800" cy="200" r="400" fill="url(#circle-gradient)" opacity="0.05" />
+  
+  <!-- Decorative elements -->
+  <path d="M400,150 L450,200 L400,250 L350,200 Z" fill="#0080FF" opacity="0.2" />
+  <path d="M1600,850 L1650,900 L1600,950 L1550,900 Z" fill="#FFC000" opacity="0.2" />
+</svg>
