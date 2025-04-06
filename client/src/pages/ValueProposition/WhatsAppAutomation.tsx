@@ -7,6 +7,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faRobot, faComment, faChartLine, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'wouter';
+import AutomationPlatformsDemo from '@/components/AutomationPlatformsDemo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,6 +227,29 @@ const WhatsAppAutomation = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Multi-Platform Demo Section */}
+      <section className="py-16 bg-gray-850">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Notre solution fonctionne sur toutes les plateformes</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Notre technologie d'automatisation ne se limite pas à WhatsApp. Intégrez-la avec tous vos canaux de communication pour offrir une expérience client cohérente et efficace.
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <AutomationPlatformsDemo initialPlatform="whatsapp" autoRotate={true} interval={4000} />
+            </motion.div>
           </div>
         </div>
       </section>

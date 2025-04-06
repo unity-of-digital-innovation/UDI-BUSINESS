@@ -12,6 +12,7 @@ import ServiceDigitalConsulting from "@/pages/ServiceDigitalConsulting";
 import NotFound from "@/pages/not-found";
 import ProgressBar from "@/components/ProgressBar";
 import CustomCursor from "@/components/CustomCursor";
+import CTABubble from "@/components/CTABubble";
 import WhatsAppAutomation from "@/pages/ValueProposition/WhatsAppAutomation";
 import TimeAndMoneySaving from "@/pages/ValueProposition/TimeAndMoneySaving";
 
@@ -31,6 +32,7 @@ function App() {
     <>
       <ProgressBar />
       <CustomCursor />
+      <CTABubble interval={15000} />
       
       <Switch>
         <Route path="/" component={Home} />
