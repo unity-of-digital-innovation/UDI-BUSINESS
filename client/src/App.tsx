@@ -12,6 +12,8 @@ import ServiceDigitalConsulting from "@/pages/ServiceDigitalConsulting";
 import NotFound from "@/pages/not-found";
 import ProgressBar from "@/components/ProgressBar";
 import CustomCursor from "@/components/CustomCursor";
+import WhatsAppAutomation from "@/pages/ValueProposition/WhatsAppAutomation";
+import TimeAndMoneySaving from "@/pages/ValueProposition/TimeAndMoneySaving";
 
 function App() {
   // Check authentication status
@@ -39,6 +41,10 @@ function App() {
         <Route path="/ServiceAIBigData" component={ServiceAIBigData} />
         <Route path="/ServiceAutomation" component={ServiceAutomation} />
         <Route path="/ServiceDigitalConsulting" component={ServiceDigitalConsulting} />
+        
+        {/* Routes pour les pages de Propositions de Valeur */}
+        <Route path="/ValueProposition/WhatsAppAutomation" component={WhatsAppAutomation} />
+        <Route path="/ValueProposition/TimeAndMoneySaving" component={TimeAndMoneySaving} />
         
         {/* Maintenir les anciennes routes pour la compatibilité */}
         <Route path="/services/developpement-logiciel" component={ServiceSoftwareDev} />

@@ -224,7 +224,7 @@ const ServiceAutomation = () => {
                   Boostez votre efficacité avec des agents intelligents sur WhatsApp, Facebook et Email.
                 </p>
                 <div className="pl-16 flex items-center">
-                  <a href="#contact" className="text-[#FFC000] flex items-center text-sm font-medium hover:underline">
+                  <a href="/ValueProposition/WhatsAppAutomation" className="text-[#FFC000] flex items-center text-sm font-medium hover:underline">
                     En savoir plus
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -248,7 +248,7 @@ const ServiceAutomation = () => {
                   Nos agents autonomes sont prêts à optimiser vos ventes, facturations, services clients, et bien plus encore. Ces assistants intelligents travaillent 24h/24 pour vous.
                 </p>
                 <div className="pl-16 flex items-center">
-                  <a href="#contact" className="text-[#0080FF] flex items-center text-sm font-medium hover:underline">
+                  <a href="/ValueProposition/WhatsAppAutomation" className="text-[#0080FF] flex items-center text-sm font-medium hover:underline">
                     En savoir plus
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -272,7 +272,7 @@ const ServiceAutomation = () => {
                   Ne perdez plus de temps avec des tâches répétitives. Notre solution permet d'automatiser les processus, de réduire les erreurs humaines et d'augmenter vos revenus.
                 </p>
                 <div className="pl-16 flex items-center">
-                  <a href="#contact" className="text-[#FFC000] flex items-center text-sm font-medium hover:underline">
+                  <a href="/ValueProposition/TimeAndMoneySaving" className="text-[#FFC000] flex items-center text-sm font-medium hover:underline">
                     En savoir plus
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -296,7 +296,7 @@ const ServiceAutomation = () => {
                   Chaque entreprise est unique, c'est pourquoi nos agents sont conçus pour répondre précisément aux besoins de votre secteur (commerce, finance, éducation, etc.).
                 </p>
                 <div className="pl-16 flex items-center">
-                  <a href="#contact" className="text-[#0080FF] flex items-center text-sm font-medium hover:underline">
+                  <a href="/ValueProposition/TimeAndMoneySaving" className="text-[#0080FF] flex items-center text-sm font-medium hover:underline">
                     En savoir plus
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -320,7 +320,7 @@ const ServiceAutomation = () => {
                   Facile à intégrer sur vos canaux existants (WhatsApp, SMS, email). Pas besoin d'investissements massifs en infrastructure, nous offrons une solution clé en main.
                 </p>
                 <div className="pl-16 flex items-center">
-                  <a href="#contact" className="text-[#FFC000] flex items-center text-sm font-medium hover:underline">
+                  <a href="/ValueProposition/TimeAndMoneySaving" className="text-[#FFC000] flex items-center text-sm font-medium hover:underline">
                     En savoir plus
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
