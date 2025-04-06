@@ -72,31 +72,38 @@ const Navbar = () => {
               </button>
               
               {isServicesMenuOpen && (
-                <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
+                <div className="absolute left-0 mt-2 w-72 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
                   <div className="p-2 space-y-1">
                     <Link
-                      href="/services/developpement-logiciel"
+                      href="/ServiceAutomation"
+                      className="block px-4 py-3 text-sm text-[#FFC000] bg-gray-900/80 border border-[#FFC000]/30 rounded-md transition duration-300 hover:bg-[#FFC000]/10 relative overflow-hidden"
+                      onClick={() => setIsServicesMenuOpen(false)}
+                    >
+                      <div className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#FFC000] text-gray-900 text-xs px-2 py-0.5 rounded-full font-medium">
+                        Phare
+                      </div>
+                      <div>
+                        <span className="font-semibold">Automatisation des Processus</span>
+                        <p className="text-xs text-gray-400 mt-0.5">Solution innovante IA pour l'automatisation des tâches</p>
+                      </div>
+                    </Link>
+                    
+                    <Link
+                      href="/ServiceSoftwareDev"
                       className="block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded-md transition duration-300"
                       onClick={() => setIsServicesMenuOpen(false)}
                     >
                       Développement Logiciel
                     </Link>
                     <Link
-                      href="/services/ia-big-data"
+                      href="/ServiceAIBigData"
                       className="block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded-md transition duration-300"
                       onClick={() => setIsServicesMenuOpen(false)}
                     >
                       IA & Big Data
                     </Link>
                     <Link
-                      href="/services/automatisation"
-                      className="block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded-md transition duration-300"
-                      onClick={() => setIsServicesMenuOpen(false)}
-                    >
-                      Automatisation des Processus
-                    </Link>
-                    <Link
-                      href="/services/conseil-digital"
+                      href="/ServiceDigitalConsulting"
                       className="block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded-md transition duration-300"
                       onClick={() => setIsServicesMenuOpen(false)}
                     >
@@ -150,28 +157,34 @@ const Navbar = () => {
               </a>
               <div className="mt-2 ml-4 flex flex-col space-y-3">
                 <Link 
-                  href="/services/developpement-logiciel" 
+                  href="/ServiceAutomation" 
+                  onClick={closeMobileMenu} 
+                  className="text-[#FFC000] font-semibold hover:text-[#FFC000] transition duration-300 text-sm bg-gray-800 p-3 rounded-md border border-[#FFC000]/30 relative"
+                >
+                  <div className="flex justify-between items-center">
+                    <span>• Automatisation des Processus</span>
+                    <span className="bg-[#FFC000] text-gray-900 text-xs px-2 py-0.5 rounded-full font-medium">
+                      Phare
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-1 pl-2">Solution innovante IA pour l'automatisation des tâches</p>
+                </Link>
+                <Link 
+                  href="/ServiceSoftwareDev" 
                   onClick={closeMobileMenu} 
                   className="text-gray-300 hover:text-[#FFC000] transition duration-300 text-sm"
                 >
                   • Développement Logiciel
                 </Link>
                 <Link 
-                  href="/services/ia-big-data" 
+                  href="/ServiceAIBigData" 
                   onClick={closeMobileMenu} 
                   className="text-gray-300 hover:text-[#FFC000] transition duration-300 text-sm"
                 >
                   • IA & Big Data
                 </Link>
                 <Link 
-                  href="/services/automatisation" 
-                  onClick={closeMobileMenu} 
-                  className="text-gray-300 hover:text-[#FFC000] transition duration-300 text-sm"
-                >
-                  • Automatisation des Processus
-                </Link>
-                <Link 
-                  href="/services/conseil-digital" 
+                  href="/ServiceDigitalConsulting" 
                   onClick={closeMobileMenu} 
                   className="text-gray-300 hover:text-[#FFC000] transition duration-300 text-sm"
                 >
