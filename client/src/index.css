@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-montserrat antialiased bg-gray-900 text-white overflow-x-hidden;
+  }
+
+  :root {
+    --udi-blue: 214.9 100% 50%;
+    --udi-yellow: 42.6 100% 50%;
+  }
+}
+
+@layer components {
+  .cursor-dot {
+    @apply w-2 h-2 bg-udi-blue rounded-full fixed pointer-events-none z-[999] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-150 ease-linear;
+  }
+
+  .cursor-outline {
+    @apply w-10 h-10 border-2 border-udi-blue/50 rounded-full fixed pointer-events-none z-[999] transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 ease-linear;
+  }
+
+  .progress-bar {
+    @apply fixed top-0 left-0 h-1 bg-gradient-to-r from-udi-blue to-udi-yellow z-[1000] transition-[width] duration-200 ease-linear;
+  }
+
+  .service-card {
+    @apply transition-transform duration-500 transform hover:-translate-y-4;
+  }
+
+  .animated-gradient {
+    @apply bg-gradient-to-r from-udi-blue to-udi-yellow bg-[length:400%_400%] animate-gradient;
+  }
+
+  .glowing-btn {
+    @apply relative overflow-hidden;
+  }
+
+  .glowing-btn::before {
+    content: '';
+    @apply absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-radial-gradient opacity-0 scale-90 transition-all duration-300;
+  }
+
+  .glowing-btn:hover::before {
+    @apply opacity-100 scale-100;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-udi-blue to-udi-yellow bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .bg-radial-gradient {
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
