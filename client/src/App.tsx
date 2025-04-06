@@ -33,10 +33,19 @@ function App() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/portfolio" component={Portfolio} />
+        
+        {/* Routes directes pour les services */}
+        <Route path="/ServiceSoftwareDev" component={ServiceSoftwareDev} />
+        <Route path="/ServiceAIBigData" component={ServiceAIBigData} />
+        <Route path="/ServiceAutomation" component={ServiceAutomation} />
+        <Route path="/ServiceDigitalConsulting" component={ServiceDigitalConsulting} />
+        
+        {/* Maintenir les anciennes routes pour la compatibilité */}
         <Route path="/services/developpement-logiciel" component={ServiceSoftwareDev} />
         <Route path="/services/ia-big-data" component={ServiceAIBigData} />
         <Route path="/services/automatisation" component={ServiceAutomation} />
         <Route path="/services/conseil-digital" component={ServiceDigitalConsulting} />
+        
         <Route path="/admin">
           {authStatus?.authenticated && authStatus?.isAdmin ? <Admin /> : <Login />}
         </Route>
