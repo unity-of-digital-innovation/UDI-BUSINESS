@@ -5,6 +5,7 @@ import session from "express-session";
 import MemoryStore from "memorystore";
 import { storage } from "./storage";
 import { authenticateUser, requireAuth, requireAdmin } from "./auth";
+import { sendEmail } from "./email";
 import { z } from "zod";
 import { 
   insertContactSchema, 
@@ -120,7 +121,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const contactData = insertContactSchema.parse(req.body);
       const contact = await storage.createContact(contactData);
-      return res.status(201).json({ message: "Contact message sent successfully" });
+      
+      // Envoyer un email avec les données de contact
+      const { success, previewUrl, error } = await sendEmail(contact);
+      
+      if (success) {
+        return res.status(201).json({ 
+          message: "Contact message sent successfully", 
+          emailSent: true,
+          previewUrl // URL pour prévisualiser l'email (utile pour le développement)
+        });
+      } else {
+        console.error("Échec de l'envoi de l'email:", error);
+        // Le message est enregistré même si l'email échoue
+        return res.status(201).json({ 
+          message: "Contact message saved but email failed", 
+          emailSent: false,
+          emailError: error 
+        });
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         return res.status(400).json({ message: "Invalid contact data", errors: error.errors });

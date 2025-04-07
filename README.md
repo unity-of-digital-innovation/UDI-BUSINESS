@@ -25,3 +25,7 @@ UDI-BUSINESS (Unity of Digital Innovation Business) est un portfolio digital dyn
 - Express.js pour l'API REST
 - Drizzle ORM avec PostgreSQL
 - Zod pour la validation des données
+
+## Installation et Exécution Locale
+
+1. Clonez le dépôt

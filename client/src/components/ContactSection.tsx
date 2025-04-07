@@ -21,6 +21,10 @@ gsap.registerPlugin(ScrollTrigger);
 const contactFormSchema = insertContactSchema.extend({
   name: z.string().min(2, { message: "Le nom doit contenir au moins 2 caractères" }),
   email: z.string().email({ message: "Adresse email invalide" }),
+  phone: z.string().optional()
+    .refine(val => !val || /^(\+\d{1,3}\s?)?(\(\d{1,4}\)\s?)?[\d\s-]{7,}$/.test(val), {
+      message: "Format de téléphone invalide"
+    }),
   subject: z.string().min(1, { message: "Veuillez sélectionner un sujet" }),
   message: z.string().min(10, { message: "Le message doit contenir au moins 10 caractères" })
 });
@@ -35,6 +39,7 @@ const ContactSection = () => {
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
       subject: '',
       message: ''
     }
@@ -158,6 +163,20 @@ const ContactSection = () => {
               </div>
               
               <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">Téléphone <span className="text-gray-500 text-xs">(optionnel)</span></label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  {...register('phone')}
+                  className={`w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0080FF] focus:border-transparent transition duration-300 ${errors.phone ? 'border-red-500' : ''}`}
+                  placeholder="+33 6 12 34 56 78" 
+                />
+                {errors.phone && (
+                  <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>
+                )}
+              </div>
+              
+              <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">Sujet</label>
                 <select 
                   id="subject" 
@@ -219,7 +238,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-bold mb-1">Email</h3>
-                <p className="text-gray-300">contact@udi-digital.com</p>
+                <p className="text-gray-300">contact@udi-business.com</p>
               </div>
             </div>
             
