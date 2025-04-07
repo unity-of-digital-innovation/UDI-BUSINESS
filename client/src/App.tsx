@@ -14,6 +14,7 @@ import NotFound from "@/pages/not-found";
 import ProgressBar from "@/components/ProgressBar";
 import CustomCursor from "@/components/CustomCursor";
 import CTABubble from "@/components/CTABubble";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import WhatsAppAutomation from "@/pages/ValueProposition/WhatsAppAutomation";
 import TimeAndMoneySaving from "@/pages/ValueProposition/TimeAndMoneySaving";
 
@@ -34,6 +35,7 @@ function App() {
       <ProgressBar />
       <CustomCursor />
       <CTABubble interval={15000} />
+      <WhatsAppButton phoneNumber="33698765432" message="Bonjour, j'aimerais en savoir plus sur les services d'UDI-BUSINESS." />
       
       <Switch>
         <Route path="/" component={Home} />

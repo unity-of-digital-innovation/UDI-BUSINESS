@@ -41,6 +41,15 @@ const CTABubble: React.FC<CTABubbleProps> = ({ interval = 15000 }) => {
     }
   }, [visible]);
   
+  // Émettre un événement personnalisé quand la visibilité change
+  useEffect(() => {
+    // Créer et dispatcher un événement personnalisé
+    const event = new CustomEvent('ctaBubbleVisibilityChange', {
+      detail: { isVisible: visible }
+    });
+    window.dispatchEvent(event);
+  }, [visible]);
+
   // Gérer les intervalles d'apparition
   useEffect(() => {
     // Ne montrer la bulle que si elle n'a pas été rejetée
