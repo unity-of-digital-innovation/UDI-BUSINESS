@@ -57,7 +57,7 @@ Plateforme complète développée avec React, TypeScript, TailwindCSS, Express e
 ### 📦 Installation
 
 ```bash
-git clone <URL-du-dépôt>
+git clone https://github.com/unity-of-digital-innovation/UDI-BUSINESS.git
 cd udi-business
 npm install
 ```
