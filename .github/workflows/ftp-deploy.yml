@@ -36,7 +36,7 @@ jobs:
 
       # 📂 Étape 5: Vérifier les fichiers buildés (debug facultatif)
       - name: List built files
-        run: ls -R ${{ env.BUILD_DIR }}
+        run: ls -R ./dist
 
       # 🚀 Étape 6: Déployer via FTP
       - name: Upload frontend via FTP
@@ -45,6 +45,6 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ${{ env.BUILD_DIR }}
+          local-dir: ./dist
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
 
