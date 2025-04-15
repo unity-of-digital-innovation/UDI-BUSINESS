@@ -3,7 +3,7 @@ name: Deploy Frontend to FTP
 on:
   push:
     branches:
-      - main  # Déclenchement sur push dans la branche main
+      - main  # Déclenchement sur  push dans la branche main
 
 jobs:
   deploy:
