@@ -1,0 +1,50 @@
+name: Deploy Frontend to FTP
+
+on:
+  push:
+    branches:
+      - main  # Déclenchement sur push dans la branche main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      FRONTEND_DIR: client
+      BUILD_DIR: client/dist
+
+    steps:
+      # 📥 Étape 1: Cloner le repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 🛠️ Étape 2: Installer Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 📦 Étape 3: Installer les dépendances dans le dossier client
+      - name: Install frontend dependencies
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm install
+
+      # 🏗️ Étape 4: Builder le frontend
+      - name: Build frontend
+        working-directory: ${{ env.FRONTEND_DIR }}
+        run: npm run build
+
+      # 📂 Étape 5: Vérifier les fichiers buildés (debug facultatif)
+      - name: List built files
+        run: ls -R ${{ env.BUILD_DIR }}
+
+      # 🚀 Étape 6: Déployer via FTP
+      - name: Upload frontend via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ${{ env.BUILD_DIR }}
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+
