@@ -38,6 +38,7 @@ jobs:
         run: |
           mv ./dist/public/* ./dist/
           rm -rf ./dist/public
+          mv ./client/src/assets/* ./dist/src/assets/
 
       # 📂 Étape 5: Vérifier   les fichiers buildés (debug   facultatif)
 
