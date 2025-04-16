@@ -60,7 +60,7 @@ const PartenairesForm = () => {
     isLoading,
     refetch,
   } = useQuery<Partenaires[]>({
-    queryKey: ["/api/partenaires"],
+    queryKey: ["https://www.udi-business-foji.onrender.com/api/partenaires"],
   });
 
   const form = useForm<PartenairesFormValues>({
@@ -74,14 +74,22 @@ const PartenairesForm = () => {
 
   const createMutation = useMutation({
     mutationFn: (data: PartenairesFormValues) =>
-      apiRequest("POST", "/api/admin/Partenairess", data),
+      apiRequest(
+        "POST",
+        "https://www.udi-business-foji.onrender.com/api/admin/Partenairess",
+        data
+      ),
     onSuccess: () => {
       toast({
         title: "Témoignage créé",
         description: "Le témoignage a été ajouté avec succès.",
         variant: "default",
       });
-      queryClient.invalidateQueries({ queryKey: ["/api/partenaires"] });
+      queryClient.invalidateQueries({
+        queryKey: [
+          "https://www.udi-business-foji.onrender.com/api/partenaires",
+        ],
+      });
       refetch();
       form.reset();
     },
@@ -98,14 +106,22 @@ const PartenairesForm = () => {
 
   const updateMutation = useMutation({
     mutationFn: ({ id, data }: { id: number; data: PartenairesFormValues }) =>
-      apiRequest("PUT", `/api/admin/Partenairess/${id}`, data),
+      apiRequest(
+        "PUT",
+        `https://www.udi-business-foji.onrender.com/api/admin/Partenairess/${id}`,
+        data
+      ),
     onSuccess: () => {
       toast({
         title: "Témoignage mis à jour",
         description: "Le témoignage a été mis à jour avec succès.",
         variant: "default",
       });
-      queryClient.invalidateQueries({ queryKey: ["/api/partenaires"] });
+      queryClient.invalidateQueries({
+        queryKey: [
+          "https://www.udi-business-foji.onrender.com/api/partenaires",
+        ],
+      });
       refetch();
       form.reset();
       setIsEditing(false);
@@ -124,14 +140,21 @@ const PartenairesForm = () => {
 
   const deleteMutation = useMutation({
     mutationFn: (id: number) =>
-      apiRequest("DELETE", `/api/admin/Partenairess/${id}`),
+      apiRequest(
+        "DELETE",
+        `https://www.udi-business-foji.onrender.com/api/admin/Partenairess/${id}`
+      ),
     onSuccess: () => {
       toast({
         title: "Témoignage supprimé",
         description: "Le témoignage a été supprimé avec succès.",
         variant: "default",
       });
-      queryClient.invalidateQueries({ queryKey: ["/api/partenaires"] });
+      queryClient.invalidateQueries({
+        queryKey: [
+          "https://www.udi-business-foji.onrender.com/api/partenaires",
+        ],
+      });
       refetch();
     },
     onError: (error) => {

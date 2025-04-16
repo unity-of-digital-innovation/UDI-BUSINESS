@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useLocation } from 'wouter';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { useMutation } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
-import { useToast } from '@/hooks/use-toast';
-import Logo from '@/components/logo';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { useState } from "react";
+import { useLocation } from "wouter";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+import Logo from "@/components/logo";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Card,
   CardContent,
@@ -16,7 +16,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -24,7 +24,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
+} from "@/components/ui/form";
 
 const loginSchema = z.object({
   username: z.string().min(1, { message: "Nom d'utilisateur requis" }),
@@ -41,14 +41,18 @@ const Login = () => {
   const form = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     },
   });
 
   const mutation = useMutation({
-    mutationFn: (data: LoginFormData) => 
-      apiRequest('POST', '/api/auth/login', data),
+    mutationFn: (data: LoginFormData) =>
+      apiRequest(
+        "POST",
+        "https://www.udi-business-foji.onrender.com/api/auth/login",
+        data
+      ),
     onSuccess: async (res) => {
       setIsLoading(false);
       const data = await res.json();
@@ -58,7 +62,7 @@ const Login = () => {
           description: "Bienvenue dans l'espace administrateur",
           variant: "default",
         });
-        setLocation('/admin');
+        setLocation("/admin");
       } else {
         toast({
           title: "Accès refusé",
@@ -71,7 +75,8 @@ const Login = () => {
       setIsLoading(false);
       toast({
         title: "Échec de la connexion",
-        description: error.message || "Nom d'utilisateur ou mot de passe incorrect",
+        description:
+          error.message || "Nom d'utilisateur ou mot de passe incorrect",
         variant: "destructive",
       });
     },
@@ -89,7 +94,9 @@ const Login = () => {
           <div className="mb-4">
             <Logo size={60} />
           </div>
-          <CardTitle className="text-2xl font-bold">Espace Administrateur</CardTitle>
+          <CardTitle className="text-2xl font-bold">
+            Espace Administrateur
+          </CardTitle>
           <CardDescription>
             Connectez-vous pour gérer le contenu du site
           </CardDescription>
@@ -104,9 +111,9 @@ const Login = () => {
                   <FormItem>
                     <FormLabel>Nom d'utilisateur</FormLabel>
                     <FormControl>
-                      <Input 
-                        placeholder="admin" 
-                        {...field} 
+                      <Input
+                        placeholder="admin"
+                        {...field}
                         className="bg-gray-800 border-gray-700 text-white"
                       />
                     </FormControl>
@@ -121,10 +128,10 @@ const Login = () => {
                   <FormItem>
                     <FormLabel>Mot de passe</FormLabel>
                     <FormControl>
-                      <Input 
-                        type="password" 
-                        placeholder="••••••••" 
-                        {...field} 
+                      <Input
+                        type="password"
+                        placeholder="••••••••"
+                        {...field}
                         className="bg-gray-800 border-gray-700 text-white"
                       />
                     </FormControl>
@@ -132,12 +139,12 @@ const Login = () => {
                   </FormItem>
                 )}
               />
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full bg-gradient-to-r from-[#0080FF] to-[#FFC000]"
                 disabled={isLoading}
               >
-                {isLoading ? 'Connexion en cours...' : 'Se connecter'}
+                {isLoading ? "Connexion en cours..." : "Se connecter"}
               </Button>
             </form>
           </Form>
@@ -146,7 +153,7 @@ const Login = () => {
           <Button
             variant="outline"
             className="w-full"
-            onClick={() => setLocation('/')}
+            onClick={() => setLocation("/")}
           >
             Retour à l'accueil
           </Button>

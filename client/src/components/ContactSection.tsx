@@ -64,7 +64,11 @@ const ContactSection = () => {
 
   const mutation = useMutation({
     mutationFn: (data: ContactFormData) =>
-      apiRequest("POST", "/api/contact", data),
+      apiRequest(
+        "POST",
+        "https://www.udi-business-foji.onrender.com/api/contact",
+        data
+      ),
     onSuccess: () => {
       toast({
         title: "Message envoyé",

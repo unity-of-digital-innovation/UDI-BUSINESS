@@ -15,7 +15,10 @@ const ProjectsSection = () => {
     isLoading,
     refetch,
   } = useQuery<Project[]>({
-    queryKey: ["/api/projects", activeCategory],
+    queryKey: [
+      "https://www.udi-business-foji.onrender.com/api/projects",
+      activeCategory,
+    ],
     queryFn: async ({ queryKey }) => {
       const [_, category] = queryKey;
       const url =

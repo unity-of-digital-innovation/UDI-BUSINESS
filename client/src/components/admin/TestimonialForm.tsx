@@ -1,20 +1,26 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
-import { useToast } from '@/hooks/use-toast';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrash, faPlus, faUser, faBuilding } from '@fortawesome/free-solid-svg-icons';
-import { insertTestimonialSchema, type Testimonial } from '@shared/schema';
-import { z } from 'zod';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEdit,
+  faTrash,
+  faPlus,
+  faUser,
+  faBuilding,
+} from "@fortawesome/free-solid-svg-icons";
+import { insertTestimonialSchema, type Testimonial } from "@shared/schema";
+import { z } from "zod";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -22,10 +28,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+} from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -36,64 +42,88 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
+} from "@/components/ui/alert-dialog";
 
 const testimonialFormSchema = insertTestimonialSchema;
 type TestimonialFormValues = z.infer<typeof testimonialFormSchema>;
 
 const TestimonialForm = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [currentTestimonialId, setCurrentTestimonialId] = useState<number | null>(null);
+  const [currentTestimonialId, setCurrentTestimonialId] = useState<
+    number | null
+  >(null);
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
-  const { data: testimonials = [], isLoading, refetch } = useQuery<Testimonial[]>({
-    queryKey: ['/api/testimonials'],
+  const {
+    data: testimonials = [],
+    isLoading,
+    refetch,
+  } = useQuery<Testimonial[]>({
+    queryKey: ["https://www.udi-business-foji.onrender.com/api/testimonials"],
   });
 
   const form = useForm<TestimonialFormValues>({
     resolver: zodResolver(testimonialFormSchema),
     defaultValues: {
-      name: '',
-      position: '',
-      company: '',
-      content: '',
-      image: '',
+      name: "",
+      position: "",
+      company: "",
+      content: "",
+      image: "",
     },
   });
 
   const createMutation = useMutation({
     mutationFn: (data: TestimonialFormValues) =>
-      apiRequest('POST', '/api/admin/testimonials', data),
+      apiRequest(
+        "POST",
+        "https://www.udi-business-foji.onrender.com/api/admin/testimonials",
+        data
+      ),
     onSuccess: () => {
       toast({
         title: "Témoignage créé",
         description: "Le témoignage a été ajouté avec succès.",
         variant: "default",
       });
-      queryClient.invalidateQueries({ queryKey: ['/api/testimonials'] });
+      queryClient.invalidateQueries({
+        queryKey: [
+          "https://www.udi-business-foji.onrender.com/api/testimonials",
+        ],
+      });
       refetch();
       form.reset();
     },
     onError: (error) => {
       toast({
         title: "Erreur",
-        description: error.message || "Une erreur s'est produite lors de la création du témoignage.",
+        description:
+          error.message ||
+          "Une erreur s'est produite lors de la création du témoignage.",
         variant: "destructive",
       });
-    }
+    },
   });
 
   const updateMutation = useMutation({
     mutationFn: ({ id, data }: { id: number; data: TestimonialFormValues }) =>
-      apiRequest('PUT', `/api/admin/testimonials/${id}`, data),
+      apiRequest(
+        "PUT",
+        `https://www.udi-business-foji.onrender.com/api/admin/testimonials/${id}`,
+        data
+      ),
     onSuccess: () => {
       toast({
         title: "Témoignage mis à jour",
         description: "Le témoignage a été mis à jour avec succès.",
         variant: "default",
       });
-      queryClient.invalidateQueries({ queryKey: ['/api/testimonials'] });
+      queryClient.invalidateQueries({
+        queryKey: [
+          "https://www.udi-business-foji.onrender.com/api/testimonials",
+        ],
+      });
       refetch();
       form.reset();
       setIsEditing(false);
@@ -102,31 +132,42 @@ const TestimonialForm = () => {
     onError: (error) => {
       toast({
         title: "Erreur",
-        description: error.message || "Une erreur s'est produite lors de la mise à jour du témoignage.",
+        description:
+          error.message ||
+          "Une erreur s'est produite lors de la mise à jour du témoignage.",
         variant: "destructive",
       });
-    }
+    },
   });
 
   const deleteMutation = useMutation({
     mutationFn: (id: number) =>
-      apiRequest('DELETE', `/api/admin/testimonials/${id}`),
+      apiRequest(
+        "DELETE",
+        `https://www.udi-business-foji.onrender.com/api/admin/testimonials/${id}`
+      ),
     onSuccess: () => {
       toast({
         title: "Témoignage supprimé",
         description: "Le témoignage a été supprimé avec succès.",
         variant: "default",
       });
-      queryClient.invalidateQueries({ queryKey: ['/api/testimonials'] });
+      queryClient.invalidateQueries({
+        queryKey: [
+          "https://www.udi-business-foji.onrender.com/api/testimonials",
+        ],
+      });
       refetch();
     },
     onError: (error) => {
       toast({
         title: "Erreur",
-        description: error.message || "Une erreur s'est produite lors de la suppression du témoignage.",
+        description:
+          error.message ||
+          "Une erreur s'est produite lors de la suppression du témoignage.",
         variant: "destructive",
       });
-    }
+    },
   });
 
   const onSubmit = (data: TestimonialFormValues) => {
@@ -171,9 +212,13 @@ const TestimonialForm = () => {
     <div className="space-y-8">
       <Card>
         <CardHeader>
-          <CardTitle>{isEditing ? 'Modifier le témoignage' : 'Ajouter un témoignage'}</CardTitle>
+          <CardTitle>
+            {isEditing ? "Modifier le témoignage" : "Ajouter un témoignage"}
+          </CardTitle>
           <CardDescription>
-            {isEditing ? 'Modifiez les informations du témoignage' : 'Ajoutez un nouveau témoignage client'}
+            {isEditing
+              ? "Modifiez les informations du témoignage"
+              : "Ajoutez un nouveau témoignage client"}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -187,9 +232,9 @@ const TestimonialForm = () => {
                     <FormItem>
                       <FormLabel>Nom</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="Ex: Sophie Martin" 
-                          {...field} 
+                        <Input
+                          placeholder="Ex: Sophie Martin"
+                          {...field}
                           className="bg-gray-800 border-gray-700 text-white"
                         />
                       </FormControl>
@@ -205,9 +250,9 @@ const TestimonialForm = () => {
                     <FormItem>
                       <FormLabel>URL de l'image</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="https://example.com/avatar.jpg" 
-                          {...field} 
+                        <Input
+                          placeholder="https://example.com/avatar.jpg"
+                          {...field}
                           className="bg-gray-800 border-gray-700 text-white"
                         />
                       </FormControl>
@@ -216,7 +261,7 @@ const TestimonialForm = () => {
                   )}
                 />
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
@@ -225,9 +270,9 @@ const TestimonialForm = () => {
                     <FormItem>
                       <FormLabel>Poste</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="Ex: Directrice Marketing" 
-                          {...field} 
+                        <Input
+                          placeholder="Ex: Directrice Marketing"
+                          {...field}
                           className="bg-gray-800 border-gray-700 text-white"
                         />
                       </FormControl>
@@ -235,7 +280,7 @@ const TestimonialForm = () => {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="company"
@@ -243,9 +288,9 @@ const TestimonialForm = () => {
                     <FormItem>
                       <FormLabel>Entreprise</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="Ex: TechSolutions" 
-                          {...field} 
+                        <Input
+                          placeholder="Ex: TechSolutions"
+                          {...field}
                           className="bg-gray-800 border-gray-700 text-white"
                         />
                       </FormControl>
@@ -254,7 +299,7 @@ const TestimonialForm = () => {
                   )}
                 />
               </div>
-              
+
               <FormField
                 control={form.control}
                 name="content"
@@ -262,10 +307,10 @@ const TestimonialForm = () => {
                   <FormItem>
                     <FormLabel>Témoignage</FormLabel>
                     <FormControl>
-                      <Textarea 
-                        placeholder="Contenu du témoignage..." 
-                        className="bg-gray-800 border-gray-700 text-white" 
-                        {...field} 
+                      <Textarea
+                        placeholder="Contenu du témoignage..."
+                        className="bg-gray-800 border-gray-700 text-white"
+                        {...field}
                         rows={4}
                       />
                     </FormControl>
@@ -273,24 +318,25 @@ const TestimonialForm = () => {
                   </FormItem>
                 )}
               />
-              
+
               <div className="flex justify-end space-x-2 pt-2">
                 {isEditing && (
-                  <Button 
-                    type="button" 
-                    variant="outline" 
-                    onClick={cancelEdit}
-                  >
+                  <Button type="button" variant="outline" onClick={cancelEdit}>
                     Annuler
                   </Button>
                 )}
-                <Button 
-                  type="submit" 
-                  disabled={createMutation.isPending || updateMutation.isPending}
+                <Button
+                  type="submit"
+                  disabled={
+                    createMutation.isPending || updateMutation.isPending
+                  }
                   className="bg-[#0080FF] hover:bg-[#0080FF]/80"
                 >
-                  <FontAwesomeIcon icon={isEditing ? faEdit : faPlus} className="mr-2" />
-                  {isEditing ? 'Mettre à jour' : 'Ajouter'}
+                  <FontAwesomeIcon
+                    icon={isEditing ? faEdit : faPlus}
+                    className="mr-2"
+                  />
+                  {isEditing ? "Mettre à jour" : "Ajouter"}
                 </Button>
               </div>
             </form>
@@ -301,36 +347,46 @@ const TestimonialForm = () => {
       <Card>
         <CardHeader>
           <CardTitle>Témoignages existants</CardTitle>
-          <CardDescription>Liste des témoignages clients affichés sur le site</CardDescription>
+          <CardDescription>
+            Liste des témoignages clients affichés sur le site
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {testimonials.length === 0 ? (
-              <p className="text-center text-gray-400 py-4">Aucun témoignage disponible</p>
+              <p className="text-center text-gray-400 py-4">
+                Aucun témoignage disponible
+              </p>
             ) : (
               testimonials.map((testimonial, index) => (
-                <div 
+                <div
                   key={testimonial.id}
                   className="p-6 bg-gray-800 rounded-lg relative group"
                 >
-                  <div className={`absolute -top-3 -left-3 text-5xl opacity-20 text-[${index % 2 === 0 ? '#0080FF' : '#FFC000'}]`}>"</div>
+                  <div
+                    className={`absolute -top-3 -left-3 text-5xl opacity-20 text-[${index % 2 === 0 ? "#0080FF" : "#FFC000"}]`}
+                  >
+                    "
+                  </div>
                   <div className="mb-4">
                     <p className="text-gray-300">{testimonial.content}</p>
                   </div>
                   <div className="flex items-center">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name} 
-                      className="w-10 h-10 rounded-full mr-3 object-cover" 
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-10 h-10 rounded-full mr-3 object-cover"
                     />
                     <div>
                       <h4 className="font-bold">{testimonial.name}</h4>
-                      <p className="text-gray-400 text-sm">{testimonial.position}, {testimonial.company}</p>
+                      <p className="text-gray-400 text-sm">
+                        {testimonial.position}, {testimonial.company}
+                      </p>
                     </div>
                     <div className="ml-auto flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Button 
-                        size="sm" 
-                        variant="ghost" 
+                      <Button
+                        size="sm"
+                        variant="ghost"
                         onClick={() => handleEdit(testimonial)}
                         className="text-gray-400 hover:text-white"
                       >
@@ -338,9 +394,9 @@ const TestimonialForm = () => {
                       </Button>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
-                          <Button 
-                            size="sm" 
-                            variant="ghost" 
+                          <Button
+                            size="sm"
+                            variant="ghost"
                             className="text-red-400 hover:text-red-300"
                           >
                             <FontAwesomeIcon icon={faTrash} />
@@ -348,14 +404,19 @@ const TestimonialForm = () => {
                         </AlertDialogTrigger>
                         <AlertDialogContent className="bg-gray-800 border-gray-700 text-white">
                           <AlertDialogHeader>
-                            <AlertDialogTitle>Confirmation de suppression</AlertDialogTitle>
+                            <AlertDialogTitle>
+                              Confirmation de suppression
+                            </AlertDialogTitle>
                             <AlertDialogDescription className="text-gray-400">
-                              Êtes-vous sûr de vouloir supprimer ce témoignage ? Cette action est irréversible.
+                              Êtes-vous sûr de vouloir supprimer ce témoignage ?
+                              Cette action est irréversible.
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
-                            <AlertDialogCancel className="bg-gray-700 text-white border-gray-600">Annuler</AlertDialogCancel>
-                            <AlertDialogAction 
+                            <AlertDialogCancel className="bg-gray-700 text-white border-gray-600">
+                              Annuler
+                            </AlertDialogCancel>
+                            <AlertDialogAction
                               className="bg-red-600 hover:bg-red-700"
                               onClick={() => handleDelete(testimonial.id)}
                             >

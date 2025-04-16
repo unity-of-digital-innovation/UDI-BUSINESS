@@ -15,7 +15,7 @@ const Admin = () => {
 
   // Verify admin authentication
   const { data: authStatus, isLoading } = useQuery({
-    queryKey: ["/api/auth/status"],
+    queryKey: ["https://www.udi-business-foji.onrender.com/api/auth/status"],
     queryFn: async () => {
       const res = await fetch(
         "https://www.udi-business-foji.onrender.com/api/auth/status",
