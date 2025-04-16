@@ -85,7 +85,7 @@ export const insertContactSchema = createInsertSchema(contacts)
     phone: z.string().optional(),
   });
 
-// Exported types
+// Expor ted   types
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 
