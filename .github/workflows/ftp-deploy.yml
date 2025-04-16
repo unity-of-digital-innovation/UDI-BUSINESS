@@ -38,8 +38,8 @@ jobs:
         run: |
           mv ./dist/public/* ./dist/
           rm -rf ./dist/public
-          mkdir ./dist/src/assets
-          mv ./client/src/assets/* ./dist/src/assets/
+          mkdir -p ./dist/src/assets
+          [ -d ./client/src/assets ] && mv ./client/src/assets/* ./dist/src/assets/
 
       # 📂 Étape 5: Vérifier   les fichiers buildés (debug   facultatif)
 
