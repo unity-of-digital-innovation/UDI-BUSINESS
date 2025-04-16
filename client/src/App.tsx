@@ -24,7 +24,7 @@ function App() {
     queryKey: ["/api/auth/status"],
     queryFn: async () => {
       const res = await fetch(
-        "http://udi-business-foji.onrender.com/api/auth/status",
+        "https://www.udi-business-foji.onrender.com/api/auth/status",
         {
           credentials: "include",
         }

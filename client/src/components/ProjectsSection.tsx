@@ -22,7 +22,9 @@ const ProjectsSection = () => {
         category === "Tous"
           ? "/api/projects"
           : `/api/projects?category=${encodeURIComponent(category as string)}`;
-      const res = await fetch("http://udi-business-foji.onrender.com" + url);
+      const res = await fetch(
+        "https://www.udi-business-foji.onrender.com" + url
+      );
       return res.json();
     },
   });
