@@ -3,7 +3,7 @@ name: Deploy Frontend to FTP
 on:
   push:
     branches:
-      - main  # Déclenchement sur  push dans la branche main
+      - main # Déclenchement sur  push dans la branche main
 
 jobs:
   deploy:
@@ -35,6 +35,7 @@ jobs:
         run: npm run build
 
       # 📂 Étape 5: Vérifier les fichiers buildés (debug   facultatif)
+
       - name: List built files
         run: ls -R ./dist
 
@@ -47,4 +48,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
-
