@@ -34,7 +34,7 @@ jobs:
         working-directory: ${{ env.FRONTEND_DIR }}
         run: npm run build
 
-      # 📂 Étape 5: Vérifier les fichiers buildés (debug   facultatif)
+      # 📂 Étape 5: Vérifier   les fichiers buildés (debug   facultatif)
 
       - name: List built files
         run: ls -R ./dist
