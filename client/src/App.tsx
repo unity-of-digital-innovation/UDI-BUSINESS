@@ -21,13 +21,13 @@ import TimeAndMoneySaving from "@/pages/ValueProposition/TimeAndMoneySaving";
 function App() {
   // Check authentication status
   const { data: authStatus } = useQuery({
-    queryKey: ['/api/auth/status'],
+    queryKey: ["/api/auth/status"],
     queryFn: async () => {
-      const res = await fetch('/api/auth/status', {
-        credentials: 'include',
+      const res = await fetch("/api/auth/status", {
+        credentials: "include",
       });
       return res.json();
-    }
+    },
   });
 
   return (
@@ -35,36 +35,58 @@ function App() {
       <ProgressBar />
       <CustomCursor />
       <CTABubble interval={15000} />
-      <WhatsAppButton phoneNumber="33698765432" message="Bonjour, j'aimerais en savoir plus sur les services d'UDI-BUSINESS." />
-      
+      <WhatsAppButton
+        phoneNumber="48006488"
+        message="Bonjour, j'aimerais en savoir plus sur les services d'UDI-BUSINESS."
+      />
+
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/equipe" component={Equipe} />
-        
+
         {/* Routes directes pour les services */}
         <Route path="/ServiceSoftwareDev" component={ServiceSoftwareDev} />
         <Route path="/ServiceAIBigData" component={ServiceAIBigData} />
         <Route path="/ServiceAutomation" component={ServiceAutomation} />
-        <Route path="/ServiceDigitalConsulting" component={ServiceDigitalConsulting} />
-        
+        <Route
+          path="/ServiceDigitalConsulting"
+          component={ServiceDigitalConsulting}
+        />
+
         {/* Routes pour les pages de Propositions de Valeur */}
-        <Route path="/ValueProposition/WhatsAppAutomation" component={WhatsAppAutomation} />
-        <Route path="/ValueProposition/TimeAndMoneySaving" component={TimeAndMoneySaving} />
-        
+        <Route
+          path="/ValueProposition/WhatsAppAutomation"
+          component={WhatsAppAutomation}
+        />
+        <Route
+          path="/ValueProposition/TimeAndMoneySaving"
+          component={TimeAndMoneySaving}
+        />
+
         {/* Maintenir les anciennes routes pour la compatibilité */}
-        <Route path="/services/developpement-logiciel" component={ServiceSoftwareDev} />
+        <Route
+          path="/services/developpement-logiciel"
+          component={ServiceSoftwareDev}
+        />
         <Route path="/services/ia-big-data" component={ServiceAIBigData} />
         <Route path="/services/automatisation" component={ServiceAutomation} />
-        <Route path="/services/conseil-digital" component={ServiceDigitalConsulting} />
-        
+        <Route
+          path="/services/conseil-digital"
+          component={ServiceDigitalConsulting}
+        />
+
         <Route path="/admin">
-          {authStatus?.authenticated && authStatus?.isAdmin ? <Admin /> : <Login />}
+          {authStatus?.authenticated && authStatus?.isAdmin ? (
+            <Admin />
+          ) : (
+            <Login />
+          )}
         </Route>
         <Route path="/login" component={Login} />
         <Route component={NotFound} />
       </Switch>
-      
+
       <Toaster />
     </>
   );

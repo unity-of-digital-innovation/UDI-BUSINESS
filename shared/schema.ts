@@ -1,4 +1,11 @@
-import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  text,
+  serial,
+  integer,
+  boolean,
+  timestamp,
+} from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -37,6 +44,13 @@ export const testimonials = pgTable("testimonials", {
   image: text("image").notNull(),
 });
 
+export const partenaires = pgTable("partenaires", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  logo: text("logo").notNull(),
+  link: text("link").notNull(),
+});
+
 export const contacts = pgTable("contacts", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
@@ -57,6 +71,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const insertServiceSchema = createInsertSchema(services);
 export const insertProjectSchema = createInsertSchema(projects);
 export const insertTestimonialSchema = createInsertSchema(testimonials);
+export const insertPartenairesSchema = createInsertSchema(partenaires);
 export const insertContactSchema = createInsertSchema(contacts)
   .pick({
     name: true,
@@ -82,6 +97,9 @@ export type Project = typeof projects.$inferSelect;
 
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 export type Testimonial = typeof testimonials.$inferSelect;
+
+export type InsertPartenaires = z.infer<typeof insertPartenairesSchema>;
+export type Partenaires = typeof partenaires.$inferSelect;
 
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type Contact = typeof contacts.$inferSelect;
