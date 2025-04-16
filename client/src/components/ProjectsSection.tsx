@@ -16,7 +16,7 @@ const ProjectsSection = () => {
     refetch,
   } = useQuery<Project[]>({
     queryKey: [
-      "https://www.udi-business-foji.onrender.com/api/projects",
+      "https://udi-business-foji.onrender.com/api/projects",
       activeCategory,
     ],
     queryFn: async ({ queryKey }) => {
@@ -25,9 +25,7 @@ const ProjectsSection = () => {
         category === "Tous"
           ? "/api/projects"
           : `/api/projects?category=${encodeURIComponent(category as string)}`;
-      const res = await fetch(
-        "https://www.udi-business-foji.onrender.com" + url
-      );
+      const res = await fetch("https://udi-business-foji.onrender.com" + url);
       return res.json();
     },
   });

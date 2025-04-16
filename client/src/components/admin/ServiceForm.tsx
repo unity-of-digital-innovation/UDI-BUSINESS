@@ -69,7 +69,7 @@ const ServiceForm = () => {
     isLoading,
     refetch,
   } = useQuery<Service[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/services"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/services"],
   });
 
   const form = useForm<ServiceFormValues>({
@@ -86,7 +86,7 @@ const ServiceForm = () => {
     mutationFn: (data: ServiceFormValues) =>
       apiRequest(
         "POST",
-        "https://www.udi-business-foji.onrender.com/api/admin/services",
+        "https://udi-business-foji.onrender.com/api/admin/services",
         data
       ),
     onSuccess: () => {
@@ -96,7 +96,7 @@ const ServiceForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: ["https://www.udi-business-foji.onrender.com/api/services"],
+        queryKey: ["https://udi-business-foji.onrender.com/api/services"],
       });
       refetch();
       form.reset();
@@ -116,7 +116,7 @@ const ServiceForm = () => {
     mutationFn: ({ id, data }: { id: number; data: ServiceFormValues }) =>
       apiRequest(
         "PUT",
-        `https://www.udi-business-foji.onrender.com/api/admin/services/${id}`,
+        `https://udi-business-foji.onrender.com/api/admin/services/${id}`,
         data
       ),
     onSuccess: () => {
@@ -126,7 +126,7 @@ const ServiceForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: ["https://www.udi-business-foji.onrender.com/api/services"],
+        queryKey: ["https://udi-business-foji.onrender.com/api/services"],
       });
       refetch();
       form.reset();
@@ -148,7 +148,7 @@ const ServiceForm = () => {
     mutationFn: (id: number) =>
       apiRequest(
         "DELETE",
-        `https://www.udi-business-foji.onrender.com/api/admin/services/${id}`
+        `https://udi-business-foji.onrender.com/api/admin/services/${id}`
       ),
     onSuccess: () => {
       toast({
@@ -157,7 +157,7 @@ const ServiceForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: ["https://www.udi-business-foji.onrender.com/api/services"],
+        queryKey: ["https://udi-business-foji.onrender.com/api/services"],
       });
       refetch();
     },

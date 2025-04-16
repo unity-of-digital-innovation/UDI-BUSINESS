@@ -40,7 +40,7 @@ const PortfolioPage = () => {
   const { data: projects = [], isLoading: isProjectsLoading } = useQuery<
     Project[]
   >({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/projects"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/projects"],
   });
 
   // Set filtered projects based on active filter

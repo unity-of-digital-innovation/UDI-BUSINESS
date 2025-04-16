@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PartenairesSection = () => {
   const { data: partenaires = [], isLoading } = useQuery<Partenaires[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/partenaires"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/partenaires"],
   });
 
   useEffect(() => {

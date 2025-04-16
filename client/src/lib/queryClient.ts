@@ -1,6 +1,6 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
-const API_URL = "https://www.udi-business-foji.onrender.com";
+const API_URL = "https://udi-business-foji.onrender.com";
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {

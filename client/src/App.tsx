@@ -21,10 +21,10 @@ import TimeAndMoneySaving from "@/pages/ValueProposition/TimeAndMoneySaving";
 function App() {
   // Check authentication status
   const { data: authStatus } = useQuery({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/auth/status"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/auth/status"],
     queryFn: async () => {
       const res = await fetch(
-        "https://www.udi-business-foji.onrender.com/api/auth/status",
+        "https://udi-business-foji.onrender.com/api/auth/status",
         {
           credentials: "include",
         }

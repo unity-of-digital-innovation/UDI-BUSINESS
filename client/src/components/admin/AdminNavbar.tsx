@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { useLocation } from 'wouter';
-import { useMutation } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
-import { useToast } from '@/hooks/use-toast';
-import Logo from '@/components/logo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faSignOutAlt, 
-  faBars, 
+import { useState } from "react";
+import { useLocation } from "wouter";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
+import Logo from "@/components/logo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSignOutAlt,
+  faBars,
   faTimes,
-  faHome 
-} from '@fortawesome/free-solid-svg-icons';
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 
 const AdminNavbar = () => {
   const [, setLocation] = useLocation();
@@ -18,13 +18,18 @@ const AdminNavbar = () => {
   const { toast } = useToast();
 
   const logoutMutation = useMutation({
-    mutationFn: () => apiRequest('POST', '/api/auth/logout', {}),
+    mutationFn: () =>
+      apiRequest(
+        "POST",
+        "https://udi-business-foji.onrender.com/api/auth/logout",
+        {}
+      ),
     onSuccess: () => {
       toast({
         title: "Déconnexion réussie",
         variant: "default",
       });
-      setLocation('/login');
+      setLocation("/login");
     },
     onError: () => {
       toast({
@@ -32,7 +37,7 @@ const AdminNavbar = () => {
         description: "Une erreur s'est produite lors de la déconnexion.",
         variant: "destructive",
       });
-    }
+    },
   });
 
   const handleLogout = () => {
@@ -51,7 +56,7 @@ const AdminNavbar = () => {
             <Logo size={32} />
             <span className="ml-2 text-lg font-bold">UDI Admin</span>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="/"
@@ -68,22 +73,25 @@ const AdminNavbar = () => {
               disabled={logoutMutation.isPending}
             >
               <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-              {logoutMutation.isPending ? 'Déconnexion...' : 'Déconnexion'}
+              {logoutMutation.isPending ? "Déconnexion..." : "Déconnexion"}
             </button>
           </div>
-          
+
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
               className="text-gray-300 hover:text-white p-2"
               aria-expanded={isMobileMenuOpen}
             >
-              <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} className="h-6 w-6" />
+              <FontAwesomeIcon
+                icon={isMobileMenuOpen ? faTimes : faBars}
+                className="h-6 w-6"
+              />
             </button>
           </div>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden">
@@ -103,7 +111,7 @@ const AdminNavbar = () => {
               disabled={logoutMutation.isPending}
             >
               <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-              {logoutMutation.isPending ? 'Déconnexion...' : 'Déconnexion'}
+              {logoutMutation.isPending ? "Déconnexion..." : "Déconnexion"}
             </button>
           </div>
         </div>

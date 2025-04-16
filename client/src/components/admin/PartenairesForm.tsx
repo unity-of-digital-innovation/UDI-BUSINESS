@@ -60,7 +60,7 @@ const PartenairesForm = () => {
     isLoading,
     refetch,
   } = useQuery<Partenaires[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/partenaires"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/partenaires"],
   });
 
   const form = useForm<PartenairesFormValues>({
@@ -76,7 +76,7 @@ const PartenairesForm = () => {
     mutationFn: (data: PartenairesFormValues) =>
       apiRequest(
         "POST",
-        "https://www.udi-business-foji.onrender.com/api/admin/Partenairess",
+        "https://udi-business-foji.onrender.com/api/admin/Partenairess",
         data
       ),
     onSuccess: () => {
@@ -86,9 +86,7 @@ const PartenairesForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: [
-          "https://www.udi-business-foji.onrender.com/api/partenaires",
-        ],
+        queryKey: ["https://udi-business-foji.onrender.com/api/partenaires"],
       });
       refetch();
       form.reset();
@@ -108,7 +106,7 @@ const PartenairesForm = () => {
     mutationFn: ({ id, data }: { id: number; data: PartenairesFormValues }) =>
       apiRequest(
         "PUT",
-        `https://www.udi-business-foji.onrender.com/api/admin/Partenairess/${id}`,
+        `https://udi-business-foji.onrender.com/api/admin/Partenairess/${id}`,
         data
       ),
     onSuccess: () => {
@@ -118,9 +116,7 @@ const PartenairesForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: [
-          "https://www.udi-business-foji.onrender.com/api/partenaires",
-        ],
+        queryKey: ["https://udi-business-foji.onrender.com/api/partenaires"],
       });
       refetch();
       form.reset();
@@ -142,7 +138,7 @@ const PartenairesForm = () => {
     mutationFn: (id: number) =>
       apiRequest(
         "DELETE",
-        `https://www.udi-business-foji.onrender.com/api/admin/Partenairess/${id}`
+        `https://udi-business-foji.onrender.com/api/admin/Partenairess/${id}`
       ),
     onSuccess: () => {
       toast({
@@ -151,9 +147,7 @@ const PartenairesForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: [
-          "https://www.udi-business-foji.onrender.com/api/partenaires",
-        ],
+        queryKey: ["https://udi-business-foji.onrender.com/api/partenaires"],
       });
       refetch();
     },

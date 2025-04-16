@@ -60,7 +60,7 @@ const TestimonialForm = () => {
     isLoading,
     refetch,
   } = useQuery<Testimonial[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/testimonials"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/testimonials"],
   });
 
   const form = useForm<TestimonialFormValues>({
@@ -78,7 +78,7 @@ const TestimonialForm = () => {
     mutationFn: (data: TestimonialFormValues) =>
       apiRequest(
         "POST",
-        "https://www.udi-business-foji.onrender.com/api/admin/testimonials",
+        "https://udi-business-foji.onrender.com/api/admin/testimonials",
         data
       ),
     onSuccess: () => {
@@ -88,9 +88,7 @@ const TestimonialForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: [
-          "https://www.udi-business-foji.onrender.com/api/testimonials",
-        ],
+        queryKey: ["https://udi-business-foji.onrender.com/api/testimonials"],
       });
       refetch();
       form.reset();
@@ -110,7 +108,7 @@ const TestimonialForm = () => {
     mutationFn: ({ id, data }: { id: number; data: TestimonialFormValues }) =>
       apiRequest(
         "PUT",
-        `https://www.udi-business-foji.onrender.com/api/admin/testimonials/${id}`,
+        `https://udi-business-foji.onrender.com/api/admin/testimonials/${id}`,
         data
       ),
     onSuccess: () => {
@@ -120,9 +118,7 @@ const TestimonialForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: [
-          "https://www.udi-business-foji.onrender.com/api/testimonials",
-        ],
+        queryKey: ["https://udi-business-foji.onrender.com/api/testimonials"],
       });
       refetch();
       form.reset();
@@ -144,7 +140,7 @@ const TestimonialForm = () => {
     mutationFn: (id: number) =>
       apiRequest(
         "DELETE",
-        `https://www.udi-business-foji.onrender.com/api/admin/testimonials/${id}`
+        `https://udi-business-foji.onrender.com/api/admin/testimonials/${id}`
       ),
     onSuccess: () => {
       toast({
@@ -153,9 +149,7 @@ const TestimonialForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: [
-          "https://www.udi-business-foji.onrender.com/api/testimonials",
-        ],
+        queryKey: ["https://udi-business-foji.onrender.com/api/testimonials"],
       });
       refetch();
     },

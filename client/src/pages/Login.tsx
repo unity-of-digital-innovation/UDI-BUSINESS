@@ -50,7 +50,7 @@ const Login = () => {
     mutationFn: (data: LoginFormData) =>
       apiRequest(
         "POST",
-        "https://www.udi-business-foji.onrender.com/api/auth/login",
+        "https://udi-business-foji.onrender.com/api/auth/login",
         data
       ),
     onSuccess: async (res) => {

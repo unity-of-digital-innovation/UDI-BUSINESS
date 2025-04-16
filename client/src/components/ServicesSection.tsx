@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
   const { data: services = [], isLoading } = useQuery<Service[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/services"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/services"],
   });
 
   useEffect(() => {

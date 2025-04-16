@@ -66,7 +66,7 @@ const ContactSection = () => {
     mutationFn: (data: ContactFormData) =>
       apiRequest(
         "POST",
-        "https://www.udi-business-foji.onrender.com/api/contact",
+        "https://udi-business-foji.onrender.com/api/contact",
         data
       ),
     onSuccess: () => {

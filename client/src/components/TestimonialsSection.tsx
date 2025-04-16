@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TestimonialsSection = () => {
   const { data: testimonials = [], isLoading } = useQuery<Testimonial[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/testimonials"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/testimonials"],
   });
 
   useEffect(() => {

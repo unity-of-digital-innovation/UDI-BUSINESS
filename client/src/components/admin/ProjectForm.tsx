@@ -65,7 +65,7 @@ const ProjectForm = () => {
     isLoading,
     refetch,
   } = useQuery<Project[]>({
-    queryKey: ["https://www.udi-business-foji.onrender.com/api/projects"],
+    queryKey: ["https://udi-business-foji.onrender.com/api/projects"],
   });
 
   const form = useForm<ProjectFormValues>({
@@ -85,7 +85,7 @@ const ProjectForm = () => {
     mutationFn: (data: ProjectFormValues) =>
       apiRequest(
         "POST",
-        "https://www.udi-business-foji.onrender.com/api/admin/projects",
+        "https://udi-business-foji.onrender.com/api/admin/projects",
         data
       ),
     onSuccess: () => {
@@ -95,7 +95,7 @@ const ProjectForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: ["https://www.udi-business-foji.onrender.com/api/projects"],
+        queryKey: ["https://udi-business-foji.onrender.com/api/projects"],
       });
       refetch();
       form.reset();
@@ -115,7 +115,7 @@ const ProjectForm = () => {
     mutationFn: ({ id, data }: { id: number; data: ProjectFormValues }) =>
       apiRequest(
         "PUT",
-        `https://www.udi-business-foji.onrender.com/api/admin/projects/${id}`,
+        `https://udi-business-foji.onrender.com/api/admin/projects/${id}`,
         data
       ),
     onSuccess: () => {
@@ -125,7 +125,7 @@ const ProjectForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: ["https://www.udi-business-foji.onrender.com/api/projects"],
+        queryKey: ["https://udi-business-foji.onrender.com/api/projects"],
       });
       refetch();
       form.reset();
@@ -147,7 +147,7 @@ const ProjectForm = () => {
     mutationFn: (id: number) =>
       apiRequest(
         "DELETE",
-        `https://www.udi-business-foji.onrender.com/api/admin/projects/${id}`
+        `https://udi-business-foji.onrender.com/api/admin/projects/${id}`
       ),
     onSuccess: () => {
       toast({
@@ -156,7 +156,7 @@ const ProjectForm = () => {
         variant: "default",
       });
       queryClient.invalidateQueries({
-        queryKey: ["https://www.udi-business-foji.onrender.com/api/projects"],
+        queryKey: ["https://udi-business-foji.onrender.com/api/projects"],
       });
       refetch();
     },
