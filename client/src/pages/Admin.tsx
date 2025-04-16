@@ -17,9 +17,12 @@ const Admin = () => {
   const { data: authStatus, isLoading } = useQuery({
     queryKey: ["/api/auth/status"],
     queryFn: async () => {
-      const res = await fetch("/api/auth/status", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        "http://udi-business-foji.onrender.com/api/auth/status",
+        {
+          credentials: "include",
+        }
+      );
       return res.json();
     },
   });

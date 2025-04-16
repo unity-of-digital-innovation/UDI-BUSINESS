@@ -34,12 +34,17 @@ jobs:
         working-directory: ${{ env.FRONTEND_DIR }}
         run: npm run build
 
+      - name: Move build files to dist root
+        run: |
+          mv ./dist/public/* ./dist/
+          rm -rf ./dist/public
+
       # 📂 Étape 5: Vérifier   les fichiers buildés (debug   facultatif)
 
       - name: List built files
         run: ls -R ./dist
 
-      # 🚀 Étape 6: Déployer via le FTP 
+      # 🚀 Étape 6: Déployer via le FTP
       - name: Upload frontend via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
