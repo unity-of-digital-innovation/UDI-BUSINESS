@@ -39,7 +39,7 @@ jobs:
       - name: List built files
         run: ls -R ./dist
 
-      # 🚀 Étape 6: Déployer via FTP
+      # 🚀 Étape 6: Déployer via le FTP 
       - name: Upload frontend via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
