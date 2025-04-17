@@ -45,7 +45,6 @@ const AnimatedPageHeader = ({
         { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.3 }
       );
     }
-
     if (subtitleRef.current) {
       gsap.fromTo(
         subtitleRef.current,
@@ -53,12 +52,10 @@ const AnimatedPageHeader = ({
         { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.5 }
       );
     }
-
     // Animation pour changer l'image de fond
     const interval = setInterval(() => {
       setCurrentBgIndex((prev) => (prev + 1) % backgroundImages.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
@@ -80,7 +77,7 @@ const AnimatedPageHeader = ({
 
   return (
     <div
-      id={id}
+      // id={id}
       className={`relative ${height} overflow-hidden`}
       ref={headerRef}
     >
@@ -106,7 +103,10 @@ const AnimatedPageHeader = ({
 
       {/* Contenu principal */}
       <div
-        className={`relative z-10 container mx-auto px-4 h-full flex flex-col justify-center ${positionClasses[textPosition]}`}
+        className={`relative z-10 
+          container mx-auto px-4 h-full flex flex-col justify-center 
+          ${positionClasses[textPosition]}
+          `}
       >
         <div className="max-w-3xl">
           <h1

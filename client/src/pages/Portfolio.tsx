@@ -175,10 +175,8 @@ const PortfolioPage = () => {
   return (
     <div className="min-h-screen bg-gray-900">
       <Navbar />
-
       {/* Spacer pour la barre de navigation */}
       <div className="h-[70px]"></div>
-
       {/* Hero Section */}
       <AnimatedPageHeader
         id="portfolio-header"
@@ -216,7 +214,6 @@ const PortfolioPage = () => {
           </div>
         </div>
       </section>
-
       {/* Projects Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
@@ -279,7 +276,6 @@ const PortfolioPage = () => {
           )}
         </div>
       </section>
-
       {/* Project Modal */}
       {isModalOpen && selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/80 backdrop-blur-sm">
@@ -397,7 +393,6 @@ const PortfolioPage = () => {
           </motion.div>
         </div>
       )}
-
       {/* CTA Section */}
       <section className="py-24 bg-gray-800 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -423,7 +418,6 @@ const PortfolioPage = () => {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );

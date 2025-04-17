@@ -5,22 +5,26 @@ import { initializeEmailService } from "./email";
 
 const app = express();
 
-import cors from "cors";
+// import cors from "cors";
 
-const allowedOrigins = ["https://services.udi-africa.com"];
+// // const allowedOrigins = [
+// //   "https://services.udi-africa.com",
+// //   "http://localhost:5000/",
+// // ];
+// const allowedOrigins = ["*"];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true, // 👈 nécessaire pour que les cookies passent
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true, // 👈 nécessaire pour que les cookies passent
+//   })
+// );
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
