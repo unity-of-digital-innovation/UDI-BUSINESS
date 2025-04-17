@@ -55,36 +55,36 @@ const PortfolioPage = () => {
   }, [activeFilter, projects]);
 
   // Animate elements when component mounts
-  useEffect(() => {
-    // Header animation
-    gsap.fromTo(
-      "#portfolio-header h1",
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: "#portfolio-header",
-          start: "top 80%",
-        },
-      }
-    );
+  // useEffect(() => {
+  //   // Header animation
+  //   gsap.fromTo(
+  //     "#portfolio-header h1",
+  //     { y: 50, opacity: 0 },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 1,
+  //       scrollTrigger: {
+  //         trigger: "#portfolio-header",
+  //         start: "top 80%",
+  //       },
+  //     }
+  //   );
 
-    gsap.fromTo(
-      "#portfolio-header p",
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: "#portfolio-header",
-          start: "top 80%",
-        },
-      }
-    );
+  //   gsap.fromTo(
+  //     "#portfolio-header p",
+  //     { y: 30, opacity: 0 },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       duration: 1,
+  //       delay: 0.2,
+  //       scrollTrigger: {
+  //         trigger: "#portfolio-header",
+  //         start: "top 80%",
+  //       },
+  //     }
+  //   );
 
     // Filter buttons animation
     gsap.fromTo(
