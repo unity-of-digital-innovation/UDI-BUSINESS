@@ -39,7 +39,7 @@ function App() {
       <CustomCursor />
       <CTABubble interval={15000} />
       <WhatsAppButton
-        phoneNumber="48006488"
+        phoneNumber="+2290148006488"
         message="Bonjour, j'aimerais en savoir plus sur les services d'UDI-BUSINESS."
       />
 
