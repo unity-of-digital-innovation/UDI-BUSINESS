@@ -7,8 +7,8 @@ const app = express();
 
 import cors from "cors";
 
-const allowedOrigins = ["https://services.udi-africa.com"];
-// const allowedOrigins = ["*"];
+// const allowedOrigins = ["https://services.udi-africa.com"];
+const allowedOrigins = ["*"];
 
 app.use(
   cors({
