@@ -38,6 +38,7 @@ jobs:
         run: |
           mv ./dist/public/* ./dist/
           rm -rf ./dist/public
+          mv ./.htaccess ./dist/
           mkdir -p ./dist/src/assets
           [ -d ./client/src/assets ] && mv ./client/src/assets/* ./dist/src/assets/
 
